@@ -1,0 +1,241 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+header {
+  width: 80%;
+  /* border: 1px solid red; */
+  /* border co 3 params */
+  margin: 0 auto; 
+  /* can giua */
+}
+header:after {
+  content: "";
+  /* after before thi phai co content:"" */
+  display: block;
+  clear: both;
+  /* dung float thi ko doc duoc width cua father -> dung clear: both de xoa */
+}
+header nav h3,
+header nav ul {
+  float: left;
+  /* border: 1px solid green; */
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+header nav h3 {
+  width: 25%;
+  color: blue;
+}
+header nav ul {
+  width: 65%;
+}
+header nav .nav-button button {
+  width: 10%;
+  padding: 10px;
+  background-color: aqua;
+  border-radius: 10%;
+  float: right;
+}
+header nav ul li {
+  display: inline-block;
+  padding: 0 50px;
+  /* paddding se là phần bắt được :hover :active :visited, etc. nhưng margin thì ko*/
+  margin: 0 10px;
+}
+button:focus {
+  outline: none;
+}
+header nav img {
+  display: none;
+}
+main {
+  width: 80%;
+  border: 1px solid red;
+  /* border co 3 params */
+  margin: 0 auto; 
+  /* can giua */
+}
+main .row {
+  font-size: 0;  
+  /* khi apply border-sizing: border-box de tac dong width thi phai chinh font-size: 0 */
+  margin-top: 20px;
+}
+main .row .block {
+  width: 50%;
+  border: 1px solid blueviolet;
+  box-sizing: border-box;
+  /* inline-block tu tao khoang cach giua cac elements -> width bi cong them len. 
+  Solution: boz-sizing: border-box de gop width = 50% = content(dat font-size:0) + padding + border */
+  display: inline-block;
+  font-size: 16px;
+  padding-left: 10px;
+}
+main .row .block .child .wrap-title {
+  margin-bottom: 40px;
+}
+main .row .block .child .wrap-title p {
+  margin-top: 20px;
+  font-size: 20px;
+}
+main .row .block .child .wrap-button {
+  margin-bottom: 60px;
+}
+main .row .block .child .wrap-button button {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid blue;
+  background-color: aquamarine;
+}
+main .block img {
+  margin-top: 40px;
+}
+main .row .block .child .wrap-button button {
+  margin-right: 10px;
+}
+main .row-three-columns {
+  display: flex;
+}
+main .row-three-columns .column {
+  margin-right: 10px;
+  line-height: 200%;
+  border: 1px solid yellowgreen;
+}
+main .row-three-columns .column img {
+  width: 64px;
+  height: 50px;
+}
+main .row .block .child-content {
+  font-size: 0;
+}
+main .row .block .child-content .question {
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 10px;
+    vertical-align: top; 
+    /* chinh question nhay len tren, giống chỉnh dấu mũ */
+    padding: 1px 5px;
+    border-radius: 50%;
+    /* làm border thành tròn bọc lấy content */
+    border: 3px solid red;
+    background: red;
+    color: white;
+  /* vertical-align chi sd voi inline-block */
+}
+main .row .block .child-content .wrap-content {
+  width: 95%;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-left: 6px;
+}
+main .row-bootstrap {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+main .row-bootstrap .column-content {
+  float: left;
+  width: 50%;
+  line-height: 200%;
+  font-size: 16px;
+}
+main .row-bootstrap .column-content .content-detail img {
+  float: left;
+  width: 10%;
+  margin-right: 10px;
+}
+main .row-bootstrap .column-content .content-detail .script h2 {
+  margin-bottom: 10px;
+}
+main .row-bootstrap .column-content #buid-bootstrap {
+  color: blue;
+}
+main .row-bootstrap .column-image {
+  float: right;
+  margin-bottom: 30px;
+}
+main .row-bootstrap .column-image img {
+  border-radius: 2%;
+}
+main .row-content-only {
+  font-size: 16px;
+  clear: both;
+  display: flex;
+  justify-content: center;
+  line-height: 200%;
+}
+main .row-content-only h2 {
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  width: 80%;
+  border: 1px solid paleturquoise;
+  margin: 20px auto; 
+}
+footer .container-footer {
+  display: flex;
+  justify-content: space-evenly;
+}
+footer .container-footer .column {
+  line-height: 200%;
+  font-size: larger;
+}
+footer .container-footer .column div img {
+  margin: 10px 5px;
+}
+footer .container-footer .column ul {
+  list-style-type: none;
+}
+
+@media (min-width: 320px) and (max-width: 640px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  header, main, footer {
+    width: 100%;
+  }
+  header:after {
+    content: "";
+    /* after before thi phai co content:"" */
+    display: block;
+    clear: both;
+    /* dung float thi ko doc duoc width cua father -> dung clear: both de xoa */
+  }
+  header nav h3,
+  header nav ul {
+    float: left;
+    box-sizing: border-box;
+    margin: 0.5em;
+  }
+  header nav h3 {
+    width: 15%;
+    color: red;
+  }
+  header nav ul {
+    width: 65%;
+    margin-top: 0.7em;
+  }
+  header nav ul li {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+  header nav .nav-button button {
+    width: 15%;
+    padding: 5px;
+    background-color: aqua;
+    border-radius: 10%;
+    float: right;
+  }
+  button:focus {
+    outline: none;
+  }
+  header nav img {
+    width: 5%;
+    display: inline-block;
+  }
+}
