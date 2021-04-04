@@ -1,0 +1,157 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+:root {
+    --color-madison: #2c3e50;
+}
+/* nav */
+nav {
+    background-color: var(--color-madison);
+    width: 100%;
+    height: 100px;
+    position: fixed;
+}
+nav .container {
+    color: white;
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .container h2,
+nav .container ul {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 20px;
+}
+nav .container h2 {
+    font-size: 28px;
+}
+nav .container ul {
+    font-size: 16px;    
+}
+nav button {
+    display: none;
+}
+nav .container ul li {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 0 20px;
+}
+
+/* header */
+header {
+    background-color: #1abc9c;
+    text-align: center;
+    color: #fff;
+    padding: 150px 0;
+}
+header div h1 {
+    text-transform: uppercase;
+}
+header div p {
+    font-size: larger;
+}
+header div img {
+    width: 15rem;
+}
+header div div .divider-custom-line {
+    width: 100%;
+    background-color: #fff;
+    height: 0.25rem;
+    max-width: 4rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+header div div img {
+    width: 3.5rem;
+    vertical-align: middle;
+}
+
+header .testing img::after {
+    content: "";
+    width: 100%;
+    background-color: #fff;
+    height: 5px;
+    display: inline-block;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+main .container {
+    background-color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+main .container h2 {
+    font-size: 48px;
+}
+main .container .star-with-divider .divider-custom-line {
+    width: 100%;
+    background-color: black;
+    height: 0.25rem;
+    max-width: 4rem;
+    display: inline-block;
+}
+main .container .star-with-divider img {
+    width: 3.5rem;
+    vertical-align: middle;
+}
+main .container .images-flex {
+    width: 100%;
+}
+main .container .images-flex img {
+    padding: 30px 20px;
+    border-radius: 2.5em;
+    box-sizing: border-box;
+    width: 33%;
+    cursor: pointer;
+}
+
+/* Reponsive */
+@media (max-width: 1367px) {
+    nav .container {
+        width: auto;
+        height: 100%;
+    }
+    nav .container h2 {
+        display: inline-block;
+    }
+    nav .container ul {
+        display: none;
+    }
+    nav .container button {
+        display: inline-block;
+        margin-right: 20px;
+        border-radius: 0.5rem;
+        color: #fff;
+        background-color: green;
+        font-weight: 700;
+        padding: 10px 20px;
+        border: none;
+        text-decoration: none;
+    }
+    header, main {
+        width: 100%;
+    }
+    main .container .images-flex img {
+        width: 45%;
+    }
+}
+@media (max-width: 767px)  {
+    nav .container h2 {
+        font-size: 20px;
+    }
+    nav .container button {
+        background-color: red;
+    }
+    main .container .images-flex img {
+        width: 100%;
+    }
+}
