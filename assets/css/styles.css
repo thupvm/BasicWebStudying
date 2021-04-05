@@ -5,6 +5,9 @@
 }
 :root {
     --color-madison: #2c3e50;
+    --color-green-cyan: #1abc9c;
+    --color-white: #fff;
+    --color-green: green;
 }
 /* nav */
 nav {
@@ -45,9 +48,9 @@ nav .container ul li {
 
 /* header */
 header {
-    background-color: #1abc9c;
+    background-color: var(--color-green-cyan);
     text-align: center;
-    color: #fff;
+    color: var(--color-white);
     padding: 150px 0;
 }
 header div h1 {
@@ -61,7 +64,7 @@ header div img {
 }
 header div div .divider-custom-line {
     width: 100%;
-    background-color: #fff;
+    background-color: var(--color-white);
     height: 0.25rem;
     max-width: 4rem;
     display: inline-block;
@@ -75,7 +78,7 @@ header div div img {
 header .testing img::after {
     content: "";
     width: 100%;
-    background-color: #fff;
+    background-color: var(--color-white);
     height: 5px;
     display: inline-block;
 }
@@ -113,6 +116,46 @@ main .container .images-flex img {
     width: 33%;
     cursor: pointer;
 }
+main .about {
+    text-align: center;
+    background-color: var(--color-green-cyan);
+    color: white;
+}
+main .about .title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 48px;
+}
+main .about .star-with-divider .divider-custom-line {
+    width: 100%;
+    background-color: var(--color-white);
+    height: 0.25rem;
+    max-width: 4rem;
+    display: inline-block;
+}
+main .about .star-with-divider img {
+    width: 3.5rem;
+    vertical-align: middle;
+}
+main .about .content {
+    margin: 10px auto;
+    font-size: 20px;
+    width: 50%;
+    display: flex;
+}
+main .about .content p {
+    text-align: left;
+    padding: 0 20px;
+}
+main .about button {
+    border: 2px solid white;
+    width: 200px;
+    height: 50px;
+    background-color: var(--color-green-cyan);
+    border-radius: 5%;
+    color: white;
+    font-size: 20px;
+}
 
 /* Reponsive */
 @media (max-width: 1367px) {
@@ -130,8 +173,8 @@ main .container .images-flex img {
         display: inline-block;
         margin-right: 20px;
         border-radius: 0.5rem;
-        color: #fff;
-        background-color: green;
+        color: var(--color-white);
+        background-color: var(--color-green);
         font-weight: 700;
         padding: 10px 20px;
         border: none;
