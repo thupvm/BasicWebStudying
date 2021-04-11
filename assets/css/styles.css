@@ -265,6 +265,61 @@ footer .container .about-freelancer {
     font-size: 20px;
 }
 
+/* Modal */
+.modal {
+    max-width: 80%;
+    display: none;
+    height: 100%;
+    margin: 1% auto;
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 13px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.modal h2 {
+    font-size: 48px;
+    padding-top: 3%;
+}
+.modal .star-with-divider .divider-custom-line {
+    width: 100%;
+    background-color: var(--color-black);
+    height: 0.25rem;
+    max-width: 10rem;
+    display: inline-block;
+}
+.modal .star-with-divider img {
+    width: 3.5rem;
+    vertical-align: middle;
+}
+.modal .image-flex,
+.modal p  {
+    width: 70%;
+    margin: 20px auto;
+}
+.modal .image-flex {
+    border-radius: 13px;
+    cursor: pointer;
+}
+.modal p {
+    font-size: 20px;
+}
+.modal .btn-close {
+    border: 2px solid var(--color-white);
+    width: auto;
+    height: 60px;
+    background-color: var(--color-green-cyan);
+    border-radius: 8px;
+    color: var(--color-white);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    outline: none;
+    margin-bottom: 20px;
+}
+
 /* Reponsive */
 @media (max-width: 1367px) {
     nav .container {

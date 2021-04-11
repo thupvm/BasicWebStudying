@@ -31,6 +31,7 @@
         </div>
     </header>
     <main>
+        <!-- Portfolio -->
         <section class="container"> 
             <h2 class="title">Portfolio</h2>
             <div class="star-with-divider">
@@ -39,7 +40,7 @@
                 <div class="divider-custom-line"></div>
             </div>
             <div class="images-flex">
-                <img src="assets/image/cabin.png" alt="" >
+                <img src="assets/image/cabin.png" alt="cabin" id="cabin" />
                 <img src="assets/image/cake.png" alt="" >
                 <img src="assets/image/circus.png" alt="">
                 <img src="assets/image/game.png" alt="">
@@ -97,19 +98,6 @@
                 </form>
             </div>
         </section>
-        <!-- <section class="modal">
-            <h2>Portfolio</h2>
-            <div>
-                <div class="divider-custom-line"></div>
-                <img src="assets/image/star.png" alt="star">
-                <div class="divider-custom-line"></div>
-            </div>
-            <img src="assets/image/cabin.png" alt="" width="400px">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
-                Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-            <button>Close window</button>
-        </section> -->
     </main>
     <footer>
         <div class="container">
@@ -134,6 +122,36 @@
     <div class="copyright">
         <div class="container"><small>Copyright @ Your Website 2020</small></div>
     </div>
+
+    <!-- Modal -->
+    <section class="modal" id="modal">
+        <h2>Log cabin</h2>
+        <div class="star-with-divider">
+            <div class="divider-custom-line"></div>
+            <img src="assets/image/star2.png" alt="star">
+            <div class="divider-custom-line"></div>
+        </div>
+        <img class="image-flex" src="assets/image/cabin.png" alt="" width="400px">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
+            Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+        <button class="btn-close" id="btn-close">Close window</button>
+    </section>
+    <!-- handle by js -->
+    <script>
+        var abc = function() {
+            alert("This should display when clicked");
+        }
+        var modal = document.getElementById("modal");
+        var cabinImage = document.getElementById("cabin");
+        cabinImage.onclick  = function() {
+            modal.style.display = "block";
+        }
+        var closeBtn = document.getElementById("btn-close");
+        closeBtn.onclick  = function() {
+            modal.style.display = "none";
+        }
+    </script>
     
 </body>
 </html>
