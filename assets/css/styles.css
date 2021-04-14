@@ -3,13 +3,19 @@
     margin: 0;
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
 :root {
     --color-madison: #2c3e50;
     --color-green-cyan: #1abc9c;
     --color-white: #fff;
     --color-green: green;
     --color-black: black;
-    --color-cyan-blue: #1a252f;
+    --color-light-blue: #e9ecef;
 }
 /* nav */
 nav {
@@ -163,14 +169,15 @@ main .about button {
     color: var(--color-white);
     font-size: 20px;
 }
+/* Contact Form */
 main .contact-me {  
     margin: 70px auto;
     background-color: var(--color-white);
     text-align: center;
 }
-
 main .contact-me h2 {
     font-size: 48px;
+    text-transform: uppercase;
 }
 main .contact-me .star-with-divider .divider-custom-line {
     width: 100%;
@@ -188,21 +195,28 @@ main .contact-me .form-detail {
     text-align: left;
     width: 40%;
 }
-main .contact-me .form-detail form {
-    padding: 0 20px;
+main .contact-me .form-detail .form-contact .control-group:not(.control-group:last-child) {
+    border-bottom: 1px solid var(--color-light-blue);
 }
-main .contact-me form input {
+main .contact-me .form-detail .form-contact .control-group label {
+    opacity: 0
+}
+main .contact-me .form-detail .form-contact .control-group input {
     display: block;
     border: none;
-    border-bottom: 1px solid var(--color-green-cyan);
     width: 100%;
     font-size: 30px;
 }
-main .contact-me form textarea {
-    width: 100%;
-    height: 200px;
+main .contact-me .form-detail .form-contact .control-group input:focus,
+main .contact-me .form-detail .form-contact .control-group textarea:focus {
+    outline: none;
+}
+main .contact-me .form-detail .form-contact .control-group textarea {
+    display: block;
     border: none;
-    border-bottom: 1px solid var(--color-green-cyan);
+    width: 100%;
+    font-size: 30px;
+    resize: none;
 }
 main .contact-me button {
     margin-top: 30px;
@@ -267,7 +281,6 @@ footer .container .about-freelancer {
 
 /* Modal */
 .modal {
-    max-width: 80%;
     display: none;
     height: 100%;
     margin: 1% auto;
@@ -348,6 +361,9 @@ footer .container .about-freelancer {
     }
     main .container .images-flex img {
         width: 45%;
+    }
+    main .about .content {
+        display: block;
     }
 }
 @media (max-width: 767px)  {

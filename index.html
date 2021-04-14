@@ -77,24 +77,26 @@
                 <div class="divider-custom-line"></div>
             </div>
             <div class="form-detail">
-                <form action="/abc.js" class="form-contact">
-                    <div>
-                        <label for="name">Name</label>
-                        <input type="text" id="fname" name="fname">
+                <form action="" class="form-contact">
+                    <div class="control-group">
+                        <label id="nameLabel" for="name">Name</label>
+                        <input type="text" id="nameInput" name="name" placeholder="Name">
                     </div>
-                    <div>
-                        <label for="email">Email Address</label>
-                        <input type="text" id="fname" name="fname">
+                    <div class="control-group">
+                        <label for="email" id="emailLabel">Email Address</label>
+                        <input type="text" id="emailInput" name="email" placeholder="Email Address">
                     </div>
-                    <div>
-                        <label for="phone-number">Phone Number</label>
-                        <input type="text" id="fname" name="fname">
+                    <div class="control-group">
+                        <label for="phoneNumber" id="phoneLabel">Phone Number</label>
+                        <input type="tel" id="phoneInput" name="phone" placeholder="Phone Number">
                     </div>
-                    <div>
-                        <label for="message">Message</label>
-                        <textarea></textarea>
+                    <div class="control-group">
+                        <label for="message" id="messageLabel">Message</label>
+                        <textarea id="textareaInput" name="textareaInput" rows="5" placeholder="Message"></textarea>
                     </div>
-                    <button type="submit">Send</button> 
+                    <div class="control-group">
+                        <button type="submit">Send</button>
+                    </div> 
                 </form>
             </div>
         </section>
@@ -122,7 +124,6 @@
     <div class="copyright">
         <div class="container"><small>Copyright @ Your Website 2020</small></div>
     </div>
-
     <!-- Modal -->
     <section class="modal" id="modal">
         <h2>Log cabin</h2>
@@ -139,10 +140,35 @@
     </section>
     <!-- handle by js -->
     <script>
-        var abc = function() {
-            alert("This should display when clicked");
+        var nameLabel = document.getElementById("nameLabel")
+        var nameInput = document.getElementById("nameInput")
+        nameInput.onclick = function() {
+            nameLabel.style.opacity = 1;
+            nameLabel.style.color = "#1abc9c";
         }
-        var modal = document.getElementById("modal");
+
+        var emailLabel = document.getElementById("emailLabel")
+        var emailInput = document.getElementById("emailInput")
+        emailInput.onclick = function() {
+            emailLabel.style.opacity = 1;
+            emailLabel.style.color = "#1abc9c";
+        }
+
+        var phoneLabel = document.getElementById("phoneLabel")
+        var phoneInput = document.getElementById("phoneInput")
+        phoneInput.onclick = function() {
+            phoneLabel.style.opacity = 1;
+            phoneLabel.style.color = "#1abc9c";
+        }
+
+        var messageLabel = document.getElementById("messageLabel")
+        var textareaInput = document.getElementById("textareaInput")
+        textareaInput.onclick = function() {
+            messageLabel.style.opacity = 1;
+            messageLabel.style.color = "#1abc9c";
+        }
+
+        var modal = document.getElementById("modal ");
         var cabinImage = document.getElementById("cabin");
         cabinImage.onclick  = function() {
             modal.style.display = "block";
