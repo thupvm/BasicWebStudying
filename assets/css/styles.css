@@ -3,9 +3,6 @@
     margin: 0;
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-*, *::before, *::after {
-    box-sizing: border-box;
-}
 h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -16,6 +13,7 @@ h1, h2, h3, h4, h5, h6 {
     --color-green: green;
     --color-black: black;
     --color-light-blue: #e9ecef;
+    --color-cyan-blue: #1a252f;
 }
 /* nav */
 nav {
@@ -238,11 +236,14 @@ footer {
 }
 footer .container {
     display: flex;
-    margin: 0 auto;
-    box-sizing: border-box;
     text-align: center;
-    width: 70%;
     justify-content: space-between;
+    margin-left: 7rem;
+    margin-right: 7rem
+
+}
+footer .container div {
+    width: 33.33%;
 }
 footer .container h4 {
     text-transform: uppercase;
@@ -259,9 +260,6 @@ footer .container .icon img {
     padding: 2px;
     background-color: var(--color-white);
     margin: 3px;
-}
-footer .container .about-freelancer {
-    width: 25%;
 }
 .copyright {
     height: 100px;
@@ -364,6 +362,10 @@ footer .container .about-freelancer {
     }
     main .about .content {
         display: block;
+    }
+    footer .container {
+        text-align: center;
+        justify-content: center;
     }
 }
 @media (max-width: 767px)  {
