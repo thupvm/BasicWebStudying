@@ -40,8 +40,8 @@
                 <div class="divider-custom-line"></div>
             </div>
             <div class="images-flex">
-                <img src="assets/image/cabin.png" alt="cabin" id="cabin" />
-                <img src="assets/image/cake.png" alt="" >
+                <img src="assets/image/cabin.png" alt="cabin" class='img-portfolio' data-header='header 1' data-img='assets/image/cabin.png' data-content='Content 1'/>
+                <img src="assets/image/cake.png" alt="" class='img-portfolio' data-header='header 2' data-img='assets/image/cake.png' data-content='Content 2'>
                 <img src="assets/image/circus.png" alt="">
                 <img src="assets/image/game.png" alt="">
                 <img src="assets/image/safe.png" alt="">
@@ -125,15 +125,15 @@
         <div class="container"><small>Copyright @ Your Website 2020</small></div>
     </div>
     <!-- Modal -->
-    <section class="modal" id="modal">
-        <h2>Log cabin</h2>
+    <section class="modal-portfolio" id="modal-portfolio">
+        <h2 class='modal-header'>Log cabin</h2>
         <div class="star-with-divider">
             <div class="divider-custom-line"></div>
             <img src="assets/image/star2.png" alt="star">
             <div class="divider-custom-line"></div>
         </div>
-        <img class="image-flex" src="assets/image/cabin.png" alt="" width="400px">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        <img class="image-flex modal-img-portfolio" src="assets/image/cabin.png" alt="" width="400px">
+        <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
             Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
             Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
         <button class="btn-close" id="btn-close">Close window</button>
@@ -168,14 +168,56 @@
             messageLabel.style.color = "#1abc9c";
         }
 
-        var modal = document.getElementById("modal ");
-        var cabinImage = document.getElementById("cabin");
-        cabinImage.onclick  = function() {
-            modal.style.display = "block";
+        var imagePortfolio = document.getElementsByClassName("img-portfolio");
+        for(let i = 0; i< imagePortfolio.length; i++) {
+            imagePortfolio[i].addEventListener('click', handleModalPortfolio)
         }
+        
+        // handle open modal
+        function handleModalPortfolio() {
+            const modalPortfolio = document.getElementsByClassName('modal-portfolio')
+
+            const header = this.getAttribute('data-header')
+
+            const headerEl = document.getElementsByClassName('modal-header')
+
+            headerEl[0].innerHTML = header
+
+
+            const image = this.getAttribute('data-img')
+            const imageModalEl =  document.getElementsByClassName('modal-img-portfolio')
+
+            imageModalEl[0].setAttribute("src", image)
+
+
+            let modalContainerEl = document.createElement("DIV");   // Create a <div> element
+            modalContainerEl.classList.add('modal-container')
+            document.body.appendChild(modalContainerEl); 
+
+
+            // const modalContainerEl = document.getElementsByClassName('modal-container')
+            // modalContainerEl[0].classlist.remove('hidden')
+            modalContainerEl.style.top = `${document.documentElement.scrollTop}px`
+            document.body.classList.add('open-modal')
+            modalPortfolio[0].classList.remove('hidden')
+            modalPortfolio[0].classList.add('display-block')
+
+            const modalContainerElement = document.getElementsByClassName('modal-container')[0]
+            modalContainerElement.addEventListener('click', handleOnClickModalContainer)
+            
+
+        }
+
         var closeBtn = document.getElementById("btn-close");
         closeBtn.onclick  = function() {
-            modal.style.display = "none";
+            document.getElementsByClassName('modal-portfolio')[0].classList.add('hidden')
+            document.getElementsByClassName('modal-portfolio')[0].classList.remove('display-block')
+            document.getElementsByClassName('modal-container')[0].remove()
+        }
+
+        function handleOnClickModalContainer() {
+            document.getElementsByClassName('modal-portfolio')[0].classList.remove('display-block')
+            document.getElementsByClassName('modal-container')[0].remove()
         }
     </script>
     

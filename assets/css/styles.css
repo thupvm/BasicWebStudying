@@ -278,7 +278,21 @@ footer .container .icon img {
 }
 
 /* Modal */
-.modal {
+.open-modal {
+    height: 100vh;
+    overflow: hidden;
+}
+.modal-container {
+    background-color: black;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    opacity: 0.5;
+}
+
+.modal-portfolio {
     display: none;
     height: 100%;
     margin: 1% auto;
@@ -289,35 +303,42 @@ footer .container .icon img {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
 }
-.modal h2 {
+.display-block {
+    display: block;
+}
+.hidden {
+    display: none;
+}
+.modal-portfolio h2 {
     font-size: 48px;
     padding-top: 3%;
 }
-.modal .star-with-divider .divider-custom-line {
+.modal-portfolio .star-with-divider .divider-custom-line {
     width: 100%;
     background-color: var(--color-black);
     height: 0.25rem;
     max-width: 10rem;
     display: inline-block;
 }
-.modal .star-with-divider img {
+.modal-portfolio .star-with-divider img {
     width: 3.5rem;
     vertical-align: middle;
 }
-.modal .image-flex,
-.modal p  {
+.modal-portfolio .image-flex,
+.modal-portfolio p  {
     width: 70%;
     margin: 20px auto;
 }
-.modal .image-flex {
+.modal-portfolio .image-flex {
     border-radius: 13px;
     cursor: pointer;
 }
-.modal p {
+.modal-portfolio p {
     font-size: 20px;
 }
-.modal .btn-close {
+.modal-portfolio .btn-close {
     border: 2px solid var(--color-white);
     width: auto;
     height: 60px;
