@@ -40,12 +40,36 @@
                 <div class="divider-custom-line"></div>
             </div>
             <div class="images-flex">
-                <img src="assets/image/cabin.png" alt="cabin" class='img-portfolio' data-header='header 1' data-img='assets/image/cabin.png' data-content='Content 1'/>
-                <img src="assets/image/cake.png" alt="" class='img-portfolio' data-header='header 2' data-img='assets/image/cake.png' data-content='Content 2'>
-                <img src="assets/image/circus.png" alt="">
-                <img src="assets/image/game.png" alt="">
-                <img src="assets/image/safe.png" alt="">
-                <img src="assets/image/submarine.png" alt="">
+                <img src="assets/image/cabin.png" alt="cabin" class='img-portfolio' 
+                data-header='LOG CABIN' data-img='assets/image/cabin.png' 
+                data-content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
+                Reprehenderit soluta, eos quod consequuntur itaque. Nam.'/>
+                <img src="assets/image/cake.png" alt="" class='img-portfolio' 
+                data-header='TASTY CAKE' data-img='assets/image/cake.png' 
+                data-content='ABCLorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
+                Reprehenderit soluta, eos quod consequuntur itaque. Nam.'>
+                <img src="assets/image/circus.png" alt="" class='img-portfolio' 
+                data-header='CIRCUS TENT' data-img='assets/image/circus.png' 
+                data-content='123Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
+                Reprehenderit soluta, eos quod consequuntur itaque. Nam.'>
+                <img src="assets/image/game.png" alt="" class='img-portfolio' 
+                data-header='CONTROLLER' data-img='assets/image/game.png' 
+                data-content='456Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
+                Reprehenderit soluta, eos quod consequuntur itaque. Nam.'>
+                <img src="assets/image/safe.png" alt="" class='img-portfolio' 
+                data-header='LOCKED SAFE' data-img='assets/image/safe.png' 
+                data-content='ppppLorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
+                Reprehenderit soluta, eos quod consequuntur itaque. Nam.'>
+                <img src="assets/image/submarine.png" alt="" class='img-portfolio' 
+                data-header='SUBMARINE' data-img='assets/image/submarin.png' 
+                data-content='MMMMMLorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
+                Reprehenderit soluta, eos quod consequuntur itaque. Nam.'>
             </div>
         </section>
         <section class="about">
@@ -103,21 +127,23 @@
     </main>
     <footer>
         <div class="container">
-            <div>
-                <h4>LOCATION</h4>
-                <p>2215 John Daniel Drive
-                Clark, MO 65243</p>
-            </div>
-            <div>
-                <h4>Around the web</h4>
-                <a href="#" class="icon"><img src="assets/image/facebook.png" alt="facebook icon" width="40px"></a>
-                <a href="#" class="icon"><img src="assets/image/insta.jpg" alt="instagram icon" width="40px"></a>
-                <a href="#" class="icon"><img src="assets/image/twitter.png" alt="twitter icon" width="40px"></a>
-                <a href="#" class="icon"><img src="assets/image/avatar.svg" alt="avatar icon" width="40px"></a>
-            </div>
-            <div class="about-freelancer">
-                <h4>ABOUT FREELANCER</h4>
-                <p>Freelance is a free to use, MIT licensed Bootstrap theme created by Start Bootstrap .</p>
+            <div class="row">
+                <div>
+                    <h4>LOCATION</h4>
+                    <p>2215 John Daniel Drive
+                    Clark, MO 65243</p>
+                </div>
+                <div>
+                    <h4>Around the web</h4>
+                    <a href="#" class="icon"><img src="assets/image/facebook.png" alt="facebook icon" width="40px"></a>
+                    <a href="#" class="icon"><img src="assets/image/insta.jpg" alt="instagram icon" width="40px"></a>
+                    <a href="#" class="icon"><img src="assets/image/twitter.png" alt="twitter icon" width="40px"></a>
+                    <a href="#" class="icon"><img src="assets/image/avatar.svg" alt="avatar icon" width="40px"></a>
+                </div>
+                <div class="about-freelancer">
+                    <h4>ABOUT FREELANCER</h4>
+                    <p>Freelance is a free to use, MIT licensed Bootstrap theme created by Start Bootstrap.</p>
+                </div>
             </div>
         </div>
     </footer>
@@ -133,7 +159,7 @@
             <div class="divider-custom-line"></div>
         </div>
         <img class="image-flex modal-img-portfolio" src="assets/image/cabin.png" alt="" width="400px">
-        <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        <p class="modal-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
             Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
             Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
         <button class="btn-close" id="btn-close">Close window</button>
@@ -175,7 +201,7 @@
         
         // handle open modal
         function handleModalPortfolio() {
-            const modalPortfolio = document.getElementsByClassName('modal-portfolio')
+            const modalPortfolio = document.getElementsByClassName('modal-portfolio') 
 
             const header = this.getAttribute('data-header')
 
@@ -183,20 +209,20 @@
 
             headerEl[0].innerHTML = header
 
-
             const image = this.getAttribute('data-img')
             const imageModalEl =  document.getElementsByClassName('modal-img-portfolio')
 
             imageModalEl[0].setAttribute("src", image)
 
+            const content = this.getAttribute('data-content')
+            const contentModalEl = document.getElementsByClassName('modal-content')
+
+            contentModalEl[0].innerHTML = content
 
             let modalContainerEl = document.createElement("DIV");   // Create a <div> element
             modalContainerEl.classList.add('modal-container')
-            document.body.appendChild(modalContainerEl); 
+            document.body.appendChild(modalContainerEl);
 
-
-            // const modalContainerEl = document.getElementsByClassName('modal-container')
-            // modalContainerEl[0].classlist.remove('hidden')
             modalContainerEl.style.top = `${document.documentElement.scrollTop}px`
             document.body.classList.add('open-modal')
             modalPortfolio[0].classList.remove('hidden')
@@ -204,8 +230,6 @@
 
             const modalContainerElement = document.getElementsByClassName('modal-container')[0]
             modalContainerElement.addEventListener('click', handleOnClickModalContainer)
-            
-
         }
 
         var closeBtn = document.getElementById("btn-close");
@@ -213,6 +237,7 @@
             document.getElementsByClassName('modal-portfolio')[0].classList.add('hidden')
             document.getElementsByClassName('modal-portfolio')[0].classList.remove('display-block')
             document.getElementsByClassName('modal-container')[0].remove()
+
         }
 
         function handleOnClickModalContainer() {

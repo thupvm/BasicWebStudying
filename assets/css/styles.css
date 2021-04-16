@@ -61,7 +61,6 @@ header {
 }
 header div h1 {
     text-transform: uppercase;
-    font-size: 64px;
 }
 header div p {
     font-size: larger;
@@ -70,7 +69,7 @@ header div img {
     width: 15rem;
 }
 header div div .divider-custom-line {
-    width: 100%;
+    width: 7%;
     background-color: var(--color-white);
     height: 0.25rem;
     max-width: 10rem;
@@ -105,7 +104,7 @@ main .container h2 {
     font-size: 48px;
 }
 main .container .star-with-divider .divider-custom-line {
-    width: 100%;
+    width: 7%;
     background-color: var(--color-black);
     height: 0.25rem;
     max-width: 10rem;
@@ -134,10 +133,9 @@ main .about {
 main .about .title {
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 48px;
 }
 main .about .star-with-divider .divider-custom-line {
-    width: 100%;
+    width: 7%;
     background-color: var(--color-white);
     height: 0.25rem;
     max-width: 10rem;
@@ -150,12 +148,13 @@ main .about .star-with-divider img {
 main .about .content {
     margin: 10px auto;
     font-size: 20px;
-    width: 40%;
     display: flex;
 }
 main .about .content p {
     text-align: left;
-    padding: 0 20px;
+    padding: 0 2rem;
+    line-height: 1.5;
+    margin-top: 2rem;
 }
 main .about button {
     margin-top: 20px;
@@ -169,16 +168,15 @@ main .about button {
 }
 /* Contact Form */
 main .contact-me {  
-    margin: 70px auto;
+    margin: 2.5rem auto;
     background-color: var(--color-white);
     text-align: center;
 }
 main .contact-me h2 {
-    font-size: 48px;
     text-transform: uppercase;
 }
 main .contact-me .star-with-divider .divider-custom-line {
-    width: 100%;
+    width: 7%;
     background-color: var(--color-black);
     height: 0.25rem;
     max-width: 10rem;
@@ -190,8 +188,7 @@ main .contact-me .star-with-divider img {
 }
 main .contact-me .form-detail {
     margin: 10px auto;
-    text-align: left;
-    width: 40%;
+    width: 60%;
 }
 main .contact-me .form-detail .form-contact .control-group:not(.control-group:last-child) {
     border-bottom: 1px solid var(--color-light-blue);
@@ -235,17 +232,20 @@ footer {
     color: var(--color-white);
 }
 footer .container {
+    width: 80%;
+    margin: 0 auto;
+}
+footer .container .row {
     display: flex;
     text-align: center;
     justify-content: space-between;
     margin-left: 7rem;
     margin-right: 7rem
-
 }
-footer .container div {
-    width: 33.33%;
+footer .container .row div {
+    width: 30%
 }
-footer .container h4 {
+footer .container .row h4 {
     text-transform: uppercase;
     font-size: 24px;
     margin-top: 30px;
@@ -316,7 +316,7 @@ footer .container .icon img {
     padding-top: 3%;
 }
 .modal-portfolio .star-with-divider .divider-custom-line {
-    width: 100%;
+    width: 7%;
     background-color: var(--color-black);
     height: 0.25rem;
     max-width: 10rem;
@@ -384,12 +384,19 @@ footer .container .icon img {
     main .about .content {
         display: block;
     }
-    footer .container {
-        text-align: center;
-        justify-content: center;
+    footer .container .row {
+        display: block;
+        margin: 0 auto;
+    }
+    footer .container .row div {
+        width: auto;
     }
 }
 @media (max-width: 767px)  {
+    header .container {
+        width: 90%;
+        margin: 0 auto;
+    }
     nav .container h2 {
         font-size: 20px;
     }
