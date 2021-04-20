@@ -99,17 +99,24 @@ function handleScrollBody() {
         backTopEl.classList.add('hidden')
     }
 }
-const showClass = document.getElementsByClassName('show')[0]
-showClass.style.height = showClass.clientHeight + 'px'
 
 // Handle Collapse
+// get current class is using height
+const firstCardHeaderEl = document.getElementsByClassName('card-header')[0]
+const firstCardContentEl = firstCardHeaderEl.nextElementSibling
+const firstCardBodyEl = firstCardContentEl.children[0]
+firstCardContentEl.style.height = `${firstCardBodyEl.clientHeight}px`
+
 const headerCollapseEl = document.getElementsByClassName('card-header')
 for(let i = 0; i < headerCollapseEl.length; i++ ) {
     headerCollapseEl[i].addEventListener('click', handleCollapse)
 }
+
 function handleCollapse() {
-    const idCardContent = this.getAttribute('data-content')
-    const cardContentEl = document.getElementById(document.getElementsByClassName('show')[0])
+    
+
+    //add class show for current .collapse
+    const cardContentEl = this.nextElementSibling
     if (cardContentEl.clientHeight) {
         cardContentEl.style.height = 0;
     } else {
@@ -119,7 +126,6 @@ function handleCollapse() {
 
     const siblingsEl = getSiblings(this)
     for (let i = 0; i < siblingsEl.length; i++) {
-        siblingsEl[i].classList.remove('show')
         siblingsEl[i].style.height = 0;
     }
 }
@@ -146,34 +152,49 @@ function getSiblings(e) { //e = .card-header
 
 // Handle Tabs Section
 const navItemEl = document.getElementsByClassName('nav-item')
-for(let i = 0; i < headerCollapseEl.length; i++ ) {
+for(let i = 0; i < navItemEl.length; i++ ) {
     navItemEl[i].addEventListener('click', handleOpenTabs)
 }
-function getSiblingsNavItem(e) { //e = .nav-item
+function getSiblingsOfTabs(e) { //e = .nav-item
     let siblings = []
     // if no parent, return no sibling
-    if(!e.parentElement) {
+    if(!e.parentElement) { //e = .tab-nav
         return siblings;
     }
     // first child of the parent node
     let sibling  = e.parentElement.children[0]; //.nav-item[0]
 
     while(sibling) {
-        const navItemChild = sibling.children[0]; //.nav-item
-        if (navItemChild !== e) {
-            const navTab = sibling;
-            siblings.push(navTab);
+        if (sibling !== e) {
+            siblings.push(sibling);
         }
         sibling = sibling.nextElementSibling;
     }
     return siblings
 }
 function handleOpenTabs() {
+    //siblings of nav-item
+    const siblingsNavItemEl = getSiblingsOfTabs(this)
+    for (let i = 0; i < siblingsNavItemEl.length; i++) {
+        siblingsNavItemEl[i].classList.remove('active')
+    }
     
-    const siblingsEl = getSiblings(this)
-    for (let i = 0; i < siblingsEl.length; i++) {
-        siblingsEl[i].classList.remove('show')
-        siblingsEl[i].style.height = 0;
+    //add .active cho current .nav-item
+    this.classList.add('active')
+
+    //get attribute data-content-id array
+    const navItemEl = this.getAttribute('data-content-id')
+
+    //get tabPane getElementById() (1)
+    const activeTabPaneEl = document.getElementById(navItemEl) 
+
+    //add class show (1)
+    activeTabPaneEl.classList.add('show')
+
+    //remove show cho cac siblings cua activeTabPane
+    const siblingsTabPaneEl = getSiblingsOfTabs(activeTabPaneEl)
+    for(let i = 0; i < siblingsTabPaneEl.length; i++) {
+        siblingsTabPaneEl[i].classList.remove('show')
     }
 }
 

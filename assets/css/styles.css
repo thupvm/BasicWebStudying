@@ -367,33 +367,33 @@ footer .container .icon img {
 #tabs .container {
     margin: 0 auto;
 }
-#tabs .tabs-section .nav-tabs .nav-item {
+#tabs .tab-section .tab-nav .nav-item {
     display: inline-block;
     margin: 5px 20px;
     opacity: 0.5;
 }
-#tabs .tabs-section .nav-tabs .nav-item.active {
+#tabs .tab-section .tab-nav .nav-item.active {
     opacity: 1;
 }
-#tabs .tabs-section .nav-tabs .nav-item button {
+#tabs .tab-section .tab-nav .nav-item button {
     padding: 15px;
     border-radius: 13px;
     background-color: aquamarine;
     border: 1px solit antiquewhite;
     margin-top: 10px;
 }
-#tabs .tabs-section .nav-tabs .nav-item:active button {
+#tabs .tab-section .tab-nav .nav-item:active button {
     background-color: pink;
 }
 
-#tabs .tabs-section .tab-content .tab-pane {
+#tabs .tab-section .tab-content .tab-pane {
     display: block;
     height: 0;
     overflow: hidden;
     text-align: left;
     margin: 10px;
 }
-#tabs .tabs-section .tab-content .show {
+#tabs .tab-section .tab-content .show {
     height: auto;
 }
 /* Reponsive */
