@@ -112,16 +112,36 @@ main .container {
     background-color: var(--color-white);
     text-align: center;
 }
-main .container .images-flex {
-    width: 100%;
+main .portforlio-row {
+    display: flex;
+    flex-wrap: wrap;
 }
-main .container .images-flex img {
-    padding: 30px 20px;
-    border-radius: 2.5em;
+main .portforlio-row .column {
     box-sizing: border-box;
-    width: 33%;
-    cursor: pointer;
 }
+main .portforlio-row .column .image-flex {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    max-width: 25rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+main .portforlio-row .column .image-flex .image-cover-background {
+    background-color: rgba(26, 188, 156, 0.9);
+}
+main .portforlio-row .column .image-flex .image-cover-plus {
+    position: absolute; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    /* opacity: 0; */
+}
+main .portforlio-row .column .image-flex img {
+    max-width: 100%;
+}
+
 main .about {
     text-align: center;
     background-color: var(--color-green-cyan);
@@ -346,7 +366,7 @@ footer .container .icon img {
 }
 #accordion .card h2,
 #accordion .card .card-body {
-    padding: 10px;
+    padding: 2px;
 }
 #accordion .card h2 {
     text-transform: capitalize;

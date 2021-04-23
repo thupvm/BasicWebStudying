@@ -79,14 +79,7 @@ function handleOnClickModalContainer() {
     document.body.classList.remove('open-modal')
 }
 
-// Handle click back to Top
-const btnBackTop = document.getElementsByClassName('back-to-top')[0]
-btnBackTop.addEventListener('click', handleBackToTop)
-function handleBackToTop() {
-    // document.body.style.top = 0
-    document.documentElement.scrollTop = 0
 
-}
 
 document.addEventListener("scroll", handleScrollBody);
 
