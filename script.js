@@ -79,8 +79,6 @@ function handleOnClickModalContainer() {
     document.body.classList.remove('open-modal')
 }
 
-
-
 document.addEventListener("scroll", handleScrollBody);
 
 function handleScrollBody() {
@@ -107,7 +105,6 @@ for(let i = 0; i < headerCollapseEl.length; i++ ) {
 
 function handleCollapse() {
     
-
     //add class show for current .collapse
     const cardContentEl = this.nextElementSibling
     if (cardContentEl.clientHeight) {
@@ -191,3 +188,10 @@ function handleOpenTabs() {
     }
 }
 
+// handle btn menu on nav
+const menuBtn = document.getElementById("btn-menu");
+menuBtn.addEventListener('click', handleShowNavWrap)
+function handleShowNavWrap() {
+    const navWrap =  document.getElementsByClassName('nav-wrap')
+    navWrap[0].classList.toggle('display-block')
+}
