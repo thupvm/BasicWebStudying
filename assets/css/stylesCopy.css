@@ -47,7 +47,6 @@ nav {
     width: 100%;
     height: 100px;
     position: fixed;
-    z-index: 1;
 }
 nav .container {
     color: var(--color-white);
@@ -69,31 +68,19 @@ nav .container h2,
 nav .container ul {
     text-transform: uppercase;
     font-weight: bold;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     cursor: pointer;
 }
 nav .container ul {
     font-size: 16px;    
 }
+nav button {
+    display: none;
+}
 nav .container ul li {
     display: inline-block;
     margin: 0 10px;
     padding: 0 20px;
-}
-nav .container .nav-col .nav-wrap.display-nav-block {
-    display: block;
-}
-nav .container .btn-menu {
-    display: none;
-    margin-top: 1rem;
-    margin-right: 1rem;
-    border-radius: 0.5rem;
-    color: var(--color-white);
-    background-color: var(--color-green);
-    font-weight: 700;
-    padding: 10px 20px;
-    border: none;
-    text-decoration: none;
 }
 
 /* header */
@@ -121,28 +108,23 @@ header .testing img::after {
     height: 5px;
     display: inline-block;
 }
+
 main {
     width: 100%;
     margin: 0 auto;
 }
 main .container {
-    margin: 0 auto;
+    width: 80%;
+    margin: 70px auto;
     background-color: var(--color-white);
     text-align: center;
-}
-main .portforlio-wrap {
-    width: 80%;
-    margin: 3rem auto;
 }
 main .portforlio-row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 }
 main .portforlio-row .column {
     box-sizing: border-box;
-    padding: 1rem;
-    max-width: 100%;
 }
 main .portforlio-row .column .image-flex {
     cursor: pointer;
@@ -152,25 +134,21 @@ main .portforlio-row .column .image-flex {
     border-radius: 0.5rem;
     overflow: hidden;
 }
-main .portforlio-row .column .image-flex .image-cover-plus {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    top: 0;
-    right: 0;
+main .portforlio-row .column .image-flex .image-cover-background {
     background-color: rgba(26, 188, 156, 0.9);
-    opacity: 0;
 }
-main .portforlio-row .column .image-flex .image-cover-plus:hover {
-    opacity: 1;
+main .portforlio-row .column .image-flex .image-cover-plus {
+    position: absolute; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    /* opacity: 0; */
 }
-main .portforlio-row .column .image-flex .image-cover-plus .image-plus {
-    width: 5rem;
-    margin-top: 25%;
-}
-main .portforlio-row .column .image-flex .img-portfolio {
+main .portforlio-row .column .image-flex img {
     max-width: 100%;
 }
+
 main .about {
     text-align: center;
     background-color: var(--color-green-cyan);
@@ -413,13 +391,8 @@ footer .container .icon img {
 }
 
 /* Tabs */
-#tabs.container {
+#tabs .container {
     margin: 0 auto;
-    width: 80%;
-}
-#tabs.container .tab-section {
-    margin: 0 auto;
-    width: 90%;
 }
 #tabs .tab-section .tab-nav .nav-item {
     display: inline-block;
@@ -450,43 +423,6 @@ footer .container .icon img {
 #tabs .tab-section .tab-content .show {
     height: auto;
 }
-/* Dropdown Section */
-.dropdown-container {
-    text-align: center;
-}
-.dropdown {
-    position: relative;
-    border: 1px solid red;
-    border-radius: .28571429rem;
-    display: inline-block;
-    min-width: 100px;
-    margin: 0 auto;
-    text-align: left;
-}
-.dropdown-no-boder-bottom {
-    border-bottom: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-.dropdown .text {
-    padding: 0.2rem;
-    cursor: pointer;
-}
-.dropdown .menu {
-    position: absolute;
-    left: 0;
-    right: 0;
-    border: 1px solid red;
-    border-top: 0;
-    border-radius: .28571429rem;
-    border-top: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    margin: 0 -1px;
-    padding: 0.2rem;
-    cursor: pointer;
-}
-
 /* Reponsive */
 @media (max-width: 1367px) {
     nav {
@@ -506,23 +442,30 @@ footer .container .icon img {
         padding: 1rem;
     }
     nav .container .nav-col .nav-wrap {
-        height: 0;
-        overflow: hidden;
-        transition: height .5s;
+        display: none;
     }
     nav .container .nav-col .nav-wrap li {
         display: block;
         margin: 0;
-        padding: 0.5rem 0 0;
+        padding: 0;
     }
     nav .container .btn-menu {
         display: inline-block;
+        margin-top: 1rem;
+        margin-right: 1rem;
+        border-radius: 0.5rem;
+        color: var(--color-white);
+        background-color: var(--color-green);
+        font-weight: 700;
+        padding: 10px 20px;
+        border: none;
+        text-decoration: none;
     }
     header, main {
         width: 100%;
     }
-    main .portforlio-row .column {
-        max-width: 50%;
+    main .container .images-flex img {
+        width: 45%;
     }
     main .about .content {
         display: block;
@@ -550,8 +493,8 @@ footer .container .icon img {
     nav .container button {
         background-color: red;
     }
-    main .portforlio-row .column {
-        max-width: 100%;
+    main .container .images-flex img {
+        width: 100%;
     }
     .modal-portfolio .modal-header {
         margin-top: 30px;

@@ -11,13 +11,13 @@
         <div class="container">
             <div class="nav-col">
                 <h2>Start Bootstrap</h2>
-                <ul id='nav-wrap' class="nav-wrap">
+                <ul class="nav-wrap">
                     <li>Portfolio</li>
                     <li>About</li>
                     <li>Contact</li>
                 </ul>
             </div>
-            <button id="btn-menu" class="btn-menu">Menu</button>
+            <button id="btn-menu-id" class="btn-menu">Menu</button>
         </div>
     </nav>
     <header>
@@ -33,6 +33,18 @@
         </div>
     </header>
     <main>
+        <!-- Dropdown section -->
+        <section class="dropdown-container">
+            <div class="dropdown">
+                <!-- <input type="hidden" name="gender">
+                <i class="icon"></i> -->
+                <div class="text" data-value="">Gender</div>
+                <div class="menu hidden">
+                  <div class="item" data-value="1">Male</div>
+                  <div class="item" data-value="0">Female</div>
+                </div>
+              </div>
+        </section>
         <!-- Collapse section -->
         <section id="accordion">
             <div class="card">
@@ -125,7 +137,7 @@
         <section id="tabs" class="container">
             <div class="tab-section">
                 <div class="tab-title">
-                    <div class="">
+                    <div>
                         <p class="text-center"><span class="btn-border-radius">Tabs demo</span></p>
                         <div class="title text-center">Front makes designing easy and performance fast</div>
                     </div>
@@ -194,25 +206,26 @@
                 <img class="start-custom-dark" src="assets/image/star2.png" alt="star">
                 <div class="divider-custom-line-dark"></div>
             </div>
+           <div class="portforlio-wrap">
             <div class="portforlio-row">
                 <!-- Portfolio Item 1-->
                 <div class="column">
                     <div class="image-flex">
-                            <div class="image-cover-plus">
-                                <img src="assets/image/plus_white.png" alt="white" class="img-plus">
-                            <img src="assets/image/cabin.png" alt="cabin" class='img-portfolio' 
+                        <div class="image-cover-plus">
+                            <img src="assets/image/add.png" alt="white" class="image-plus">
+                        </div>
+                        <img src="assets/image/cabin.png" alt="cabin" class='img-portfolio' 
                             data-header='LOG CABIN' data-img='assets/image/cabin.png' 
                             data-content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
                             Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
                             Reprehenderit soluta, eos quod consequuntur itaque. Nam.'/>
-                        </div>
-                        </div>
+                    </div>
                 </div>
                 <!-- Portfolio Item 2-->
                 <div class="column">
                     <div class="image-flex">
                         <div class="image-cover-plus">
-                            <img src="assets/image/plus_white.png" alt="white" class="img-plus">
+                            <img src="assets/image/add.png" alt="white" class="image-plus">
                         </div>
                         <img src="assets/image/cake.png" alt="" class='img-portfolio' 
                         data-header='TASTY CAKE' data-img='assets/image/cake.png' 
@@ -225,7 +238,7 @@
                 <div class="column">
                     <div class="image-flex">
                         <div class="image-cover-plus">
-                            <img src="assets/image/plus_white.png" alt="white" class="img-plus">
+                            <img src="assets/image/add.png" alt="white" class="image-plus">
                         </div>
                         <img src="assets/image/circus.png" alt="" class='img-portfolio' 
                         data-header='CIRCUS TENT' data-img='assets/image/circus.png' 
@@ -238,7 +251,7 @@
                 <div class="column">
                     <div class="image-flex">
                         <div class="image-cover-plus">
-                            <img src="assets/image/plus_white.png" alt="white" class="img-plus">
+                            <img src="assets/image/add.png" alt="white" class="image-plus">
                         </div>
                         <img src="assets/image/game.png" alt="" class='img-portfolio' 
                         data-header='CONTROLLER' data-img='assets/image/game.png' 
@@ -251,7 +264,7 @@
                 <div class="column">
                     <div class="image-flex">
                         <div class="image-cover-plus">
-                            <img src="assets/image/plus_white.png" alt="white" class="img-plus">
+                            <img src="assets/image/add.png" alt="white" class="image-plus">
                         </div>
                         <img src="assets/image/safe.png" alt="" class='img-portfolio' 
                         data-header='LOCKED SAFE' data-img='assets/image/safe.png' 
@@ -264,7 +277,7 @@
                 <div class="column">
                     <div class="image-flex">
                         <div class="image-cover-plus">
-                            <img src="assets/image/plus_white.png" alt="white" class="img-plus">
+                            <img src="assets/image/add.png" alt="white" class="image-plus">
                         </div>
                         <img src="assets/image/submarine.png" alt="" class='img-portfolio' 
                         data-header='SUBMARINE' data-img='assets/image/submarine.png' 
@@ -274,6 +287,7 @@
                     </div>
                 </div>
             </div>
+           </div>
             <!-- <div class="images-flex">
                 <img src="assets/image/cabin.png" alt="cabin" class='img-portfolio' 
                 data-header='LOG CABIN' data-img='assets/image/cabin.png' 

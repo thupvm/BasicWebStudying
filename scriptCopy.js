@@ -27,26 +27,25 @@ textareaInput.onclick = function() {
     messageLabel.style.color = "#1abc9c";
 }
 
-var imageCoverPlus = document.getElementsByClassName("image-cover-plus");
-for(let i = 0; i< imageCoverPlus.length; i++) {
-    imageCoverPlus[i].addEventListener('click', handleModalPortfolio)
+var imagePortfolio = document.getElementsByClassName("img-portfolio");
+for(let i = 0; i< imagePortfolio.length; i++) {
+    imagePortfolio[i].addEventListener('click', handleModalPortfolio)
 }
 
 // handle open modal
 function handleModalPortfolio() {
-    const imagePortfolio = this.nextElementSibling
-    const header = imagePortfolio.getAttribute('data-header') // get dynamic data for header 
+    const header = this.getAttribute('data-header') // get dynamic data for header 
 
     const headerEl = document.getElementsByClassName('modal-header') // get element header of Modal 
 
     headerEl[0].innerHTML = header // if data type is text, use .innerHTML to set text for El
 
-    const image = imagePortfolio.getAttribute('data-img')
+    const image = this.getAttribute('data-img')
     const imageModalEl =  document.getElementsByClassName('modal-img-portfolio')
 
     imageModalEl[0].setAttribute("src", image) // set data (img) to attribute "src" modal-img-portfolio class El
 
-    const content = imagePortfolio.getAttribute('data-content')
+    const content = this.getAttribute('data-content')
     const contentModalEl = document.getElementsByClassName('modal-content')
 
     contentModalEl[0].innerHTML = content
@@ -105,6 +104,7 @@ for(let i = 0; i < headerCollapseEl.length; i++ ) {
 }
 
 function handleCollapse() {
+    
     //add class show for current .collapse
     const cardContentEl = this.nextElementSibling
     if (cardContentEl.clientHeight) {
@@ -187,48 +187,11 @@ function handleOpenTabs() {
         siblingsTabPaneEl[i].classList.remove('show')
     }
 }
-// handle btn menu on nav
-// const menuBtn = document.getElementById("btn-menu-id");
-// menuBtn.addEventListener('click', handleShowNavWrap)
-// function handleShowNavWrap() {
-//     const navWrap =  document.getElementsByClassName('nav-wrap')
-//     navWrap[0].classList.toggle('display-nav-block')
-// }
 
-const menuBtn = document.getElementById("btn-menu-id");
+// handle btn menu on nav
+const menuBtn = document.getElementById("btn-menu");
 menuBtn.addEventListener('click', handleShowNavWrap)
 function handleShowNavWrap() {
-    const navWrap =  document.getElementsByClassName('nav-wrap')[0]
-    if (navWrap.clientHeight) {
-        navWrap.style.height = 0;
-    } else {
-        const numberChildren = navWrap.children.length
-        const sumOfHeightNavChildren = navWrap.children[0].clientHeight*numberChildren
-        navWrap.style.height = `${sumOfHeightNavChildren}px`
-    }
+    const navWrap =  document.getElementsByClassName('nav-wrap')
+    navWrap[0].classList.toggle('display-block')
 }
-
-// click vao .dropdown
-const dropdownEl = document.getElementsByClassName('dropdown')[0]
-const menuEl = dropdownEl.children[1]
-const menuItems = menuEl.children
-const textEl =dropdownEl.children[0]
-textEl.addEventListener('click', handleDropdown)
-// -> toggle .hidden cho .menu | toggle cho icon xoay xuong/len
-
-function handleDropdown() {
-    menuEl.classList.toggle('hidden')
-    dropdownEl.classList.toggle('dropdown-no-boder-bottom')
-}
-// click vao tung item: query all items -> get data-value, text cua current item -> gan vao .text
-
-for(let i = 0; i < menuItems.length; i++) {
-    menuItems[i].addEventListener('click', handleClickMenuItem)
-}
-function handleClickMenuItem(e) {
-    textEl.innerHTML = this.innerHTML
-    textEl.setAttribute('data-value', this.getAttribute('data-value'))
-    menuEl.classList.add('hidden')
-    dropdownEl.classList.remove('dropdown-no-boder-bottom')
-}
-//add .hidden vao .menu va remove class .transition cho icon
