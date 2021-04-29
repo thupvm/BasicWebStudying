@@ -319,7 +319,6 @@ footer .container .icon img {
     width: 70%;
     margin: 0 auto;
     background-color: whitesmoke;
-    text-align: center;
     border-radius: 13px;
     position: fixed;
     top: 20px;
@@ -485,6 +484,39 @@ footer .container .icon img {
     margin: 0 -1px;
     padding: 0.2rem;
     cursor: pointer;
+}
+/* Form Modal */
+.modal-form {
+    display: none;
+    height: calc(100% - 40px);
+    width: 70%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 13px;
+    position: fixed;
+    top: 20px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    overflow-y: auto;
+}
+.modal-form .btn-cross {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: none;
+    width: 30px;
+}
+.modal-form .btn-cross img {
+    width: 100%;
+}
+.modal-form h2 {
+    padding-top: 10%;
+}
+.hidden {
+    display: none;
 }
 
 /* Reponsive */

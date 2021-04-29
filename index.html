@@ -288,38 +288,6 @@
                 </div>
             </div>
            </div>
-            <!-- <div class="images-flex">
-                <img src="assets/image/cabin.png" alt="cabin" class='img-portfolio' 
-                data-header='LOG CABIN' data-img='assets/image/cabin.png' 
-                data-content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
-                Reprehenderit soluta, eos quod consequuntur itaque. Nam.'/>
-                <img src="assets/image/cake.png" alt="" class='img-portfolio' 
-                data-header='TASTY CAKE' data-img='assets/image/cake.png' 
-                data-content='ABCLorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
-                Reprehenderit soluta, eos quod consequuntur itaque. Nam.'>
-                <img src="assets/image/circus.png" alt="" class='img-portfolio' 
-                data-header='CIRCUS TENT' data-img='assets/image/circus.png' 
-                data-content='123Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
-                Reprehenderit soluta, eos quod consequuntur itaque. Nam.'>
-                <img src="assets/image/game.png" alt="" class='img-portfolio' 
-                data-header='CONTROLLER' data-img='assets/image/game.png' 
-                data-content='456Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
-                Reprehenderit soluta, eos quod consequuntur itaque. Nam.'>
-                <img src="assets/image/safe.png" alt="" class='img-portfolio' 
-                data-header='LOCKED SAFE' data-img='assets/image/safe.png' 
-                data-content='ppppLorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
-                Reprehenderit soluta, eos quod consequuntur itaque. Nam.'>
-                <img src="assets/image/submarine.png" alt="" class='img-portfolio' 
-                data-header='SUBMARINE' data-img='assets/image/submarine.png' 
-                data-content='MMMMMLorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
-                Reprehenderit soluta, eos quod consequuntur itaque. Nam.'>
-            </div> -->
         </section>
         <section class="about">
             <h2 class="title">About</h2>
@@ -342,6 +310,7 @@
                 </button>
             </div>
         </section>
+        <!-- Form Contact -->
         <section class="contact-me">
             <h2 class="title">Contact me</h2>
             <div class="star-with-divider">
@@ -350,7 +319,7 @@
                 <div class="divider-custom-line-dark"></div>
             </div>
             <div class="form-detail">
-                <form action="" class="form-contact">
+                <form id="formContact" action="" class="form-contact">
                     <div class="control-group">
                         <label id="nameLabel" for="name">Name</label>
                         <input type="text" id="nameInput" name="name" placeholder="Name">
@@ -368,7 +337,7 @@
                         <textarea id="textareaInput" name="textareaInput" rows="5" placeholder="Message"></textarea>
                     </div>
                     <div class="control-group">
-                        <button type="submit">Send</button>
+                        <button type="submit" onclick="handleFormSubmit()">Send</button>
                     </div> 
                 </form>
             </div>
@@ -415,6 +384,31 @@
             Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
             Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
         <button class="btn-close" id="btn-close">Close window</button>
+    </section>
+    <!-- Form Modal -->
+    <section class="modal-form" id="modalFormContact">
+        <button class="btn-cross" id="btn-close">
+            <img src="assets/image/cross.png" alt="cross sign">
+        </button>
+        <h2 class="form-message">
+            Thank you for your information submition
+        </h2>
+        <div class="control-group">
+            <label for="name">Name</label>
+            <span name="name" >
+        </div>
+        <div class="control-group">
+            <label for="email">Email Address</label>
+            <span >
+        </div>
+        <div class="control-group">
+            <label for="phoneNumber" id="phoneLabel">Phone Number</label>
+            <span >
+        </div>
+        <div class="control-group">
+            <label for="message" id="messageLabel">Message</label>
+            <span ></span>
+        </div>
     </section>
     <!-- Back to Top -->
     <span>

@@ -221,7 +221,7 @@ function handleDropdown() {
     dropdownEl.classList.toggle('dropdown-no-boder-bottom')
 }
 // click vao tung item: query all items -> get data-value, text cua current item -> gan vao .text
-
+//add .hidden vao .menu va remove class .transition cho icon
 for(let i = 0; i < menuItems.length; i++) {
     menuItems[i].addEventListener('click', handleClickMenuItem)
 }
@@ -231,4 +231,12 @@ function handleClickMenuItem(e) {
     menuEl.classList.add('hidden')
     dropdownEl.classList.remove('dropdown-no-boder-bottom')
 }
-//add .hidden vao .menu va remove class .transition cho icon
+
+// handleFormSubmit
+const formContact = document.getElementById("formContact");
+formContact.addEventListener('submit', handleModalPortfolio)
+
+function handleModalFormContact() {
+    const modalFormEl = document.getElementById(modalFormContact)
+}
+
