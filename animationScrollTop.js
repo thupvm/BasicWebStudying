@@ -9,7 +9,7 @@ function scrollTo(element, to, duration) {
         var val = Math.easeInOutQuad(currentTime, start, change, duration);
         element.scrollTop = val;
         if(currentTime < duration) {
-            setTimeout(animateScroll, increment);
+            setTimeout(animateScroll, 40);
         }
     };
     animateScroll();

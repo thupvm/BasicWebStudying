@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Start Bootstrap</title>
 </head>
 <body>
@@ -36,8 +37,8 @@
         <!-- Dropdown section -->
         <section class="dropdown-container">
             <div class="dropdown">
-                <!-- <input type="hidden" name="gender">
-                <i class="icon"></i> -->
+                <!-- <input type="hidden" name="gender"> -->
+                <i class="fa fa-chevron-down icon" aria-hidden="true"></i>
                 <div class="text" data-value="">Gender</div>
                 <div class="menu hidden">
                   <div class="item" data-value="1">Male</div>
@@ -319,7 +320,7 @@
                 <div class="divider-custom-line-dark"></div>
             </div>
             <div class="form-detail">
-                <form id="formContact" action="" class="form-contact">
+                <div id="formContact" action="#" class="form-contact">
                     <div class="control-group">
                         <label id="nameLabel" for="name">Name</label>
                         <input type="text" id="nameInput" name="name" placeholder="Name">
@@ -334,12 +335,12 @@
                     </div>
                     <div class="control-group">
                         <label for="message" id="messageLabel">Message</label>
-                        <textarea id="textareaInput" name="textareaInput" rows="5" placeholder="Message"></textarea>
+                        <textarea id="messageInput" name="textareaInput" rows="5" placeholder="Message"></textarea>
                     </div>
                     <div class="control-group">
-                        <button type="submit" onclick="handleFormSubmit()">Send</button>
+                        <button class="btn-send">Send</button>
                     </div> 
-                </form>
+                </div>
             </div>
         </section>
     </main>
@@ -369,8 +370,8 @@
         <div class="container"><small>Copyright @ Your Website 2020</small></div>
     </div>
     <!-- Modal -->
-    <section class="modal-portfolio" id="modal-portfolio">
-        <button class="btn-cross" id="btn-close">
+    <section class="modal-portfolio modal" id="modal-portfolio">
+        <button class="btn-cross btn-close">
             <img src="assets/image/cross.png" alt="cross sign">
         </button>
         <h2 class='modal-header'>Log cabin</h2>
@@ -383,11 +384,11 @@
         <p class="modal-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
             Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? 
             Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-        <button class="btn-close" id="btn-close">Close window</button>
+        <button class="btn-close exit">Close window</button>
     </section>
     <!-- Form Modal -->
-    <section class="modal-form" id="modalFormContact">
-        <button class="btn-cross" id="btn-close">
+    <section class="modal-form modal" id="modalFormContact">
+        <button class="btn-cross btn-close">
             <img src="assets/image/cross.png" alt="cross sign">
         </button>
         <h2 class="form-message">
@@ -395,19 +396,19 @@
         </h2>
         <div class="control-group">
             <label for="name">Name</label>
-            <span name="name" >
+            <span name="name" data-content="nameInput" >
         </div>
         <div class="control-group">
             <label for="email">Email Address</label>
-            <span >
+            <span name="email" data-content="emailInput" >
         </div>
         <div class="control-group">
             <label for="phoneNumber" id="phoneLabel">Phone Number</label>
-            <span >
+            <span name="phone" data-content="phoneInput" >
         </div>
         <div class="control-group">
             <label for="message" id="messageLabel">Message</label>
-            <span ></span>
+            <span name="message" data-content="messageInput" >
         </div>
     </section>
     <!-- Back to Top -->
@@ -416,4 +417,5 @@
     </span>
 </body>
 <script type = text/javascript src="./script.js"></script>
+<script type = text/javascript src="./animationScrollTop.js"></script>
 </html>

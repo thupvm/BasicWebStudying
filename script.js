@@ -21,8 +21,8 @@ phoneInput.onclick = function() {
 }
 
 var messageLabel = document.getElementById("messageLabel")
-var textareaInput = document.getElementById("textareaInput")
-textareaInput.onclick = function() {
+var messageInput = document.getElementById("messageInput")
+messageInput.onclick = function() {
     messageLabel.style.opacity = 1;
     messageLabel.style.color = "#1abc9c";
 }
@@ -51,28 +51,25 @@ function handleModalPortfolio() {
 
     contentModalEl[0].innerHTML = content
 
-    let modalContainerEl = document.createElement("DIV");   // Create a <div> element
-    modalContainerEl.classList.add('modal-container') // add class 'modal-continer' in css to DIV el
-    document.body.appendChild(modalContainerEl); //append modalContainerEl as the last node in body
-
-    modalContainerEl.style.top = `${document.documentElement.scrollTop}px` // set top = scrollTop 
-    document.body.classList.add('open-modal') // add open-modal class to body
-
     const modalPortfolio = document.getElementsByClassName('modal-portfolio') 
     modalPortfolio[0].classList.remove('hidden')
     modalPortfolio[0].classList.add('display-block')
 
+    handleBackgroundModal()
+
     const modalContainerElement = document.getElementsByClassName('modal-container')[0]
     modalContainerElement.addEventListener('click', handleOnClickModalContainer)
+
+    
 }
 
-var closeBtn = document.getElementById("btn-close");
-closeBtn.onclick  = function() {
-    document.getElementsByClassName('modal-portfolio')[0].classList.remove('display-block')
-    // document.getElementsByClassName('modal-portfolio')[0].classList.add('hidden')
-    document.getElementsByClassName('modal-container')[0].remove()
-    document.body.classList.remove('open-modal')
-}
+// var closeBtn = document.getElementById("btn-close");
+// closeBtn.onclick  = function() {
+//     document.getElementsByClassName('modal-portfolio')[0].classList.remove('display-block')
+//     // document.getElementsByClassName('modal-portfolio')[0].classList.add('hidden')
+//     document.getElementsByClassName('modal-container')[0].remove()
+//     document.body.classList.remove('open-modal')
+// }
 
 function handleOnClickModalContainer() {
     document.getElementsByClassName('modal-portfolio')[0].classList.remove('display-block')
@@ -210,9 +207,9 @@ function handleShowNavWrap() {
 
 // click vao .dropdown
 const dropdownEl = document.getElementsByClassName('dropdown')[0]
-const menuEl = dropdownEl.children[1]
+const menuEl = dropdownEl.children[2]
 const menuItems = menuEl.children
-const textEl =dropdownEl.children[0]
+const textEl =dropdownEl.children[1]
 textEl.addEventListener('click', handleDropdown)
 // -> toggle .hidden cho .menu | toggle cho icon xoay xuong/len
 
@@ -233,10 +230,38 @@ function handleClickMenuItem(e) {
 }
 
 // handleFormSubmit
-const formContact = document.getElementById("formContact");
-formContact.addEventListener('submit', handleModalPortfolio)
+const btnSend = document.getElementsByClassName('btn-send')[0];
+btnSend.addEventListener('click', handleModalFormContact)
+
+function setValueForm (id) {
+    document.querySelectorAll(`[data-content=${id}]`)[0].innerHTML = document.getElementById(id).value
+} 
 
 function handleModalFormContact() {
-    const modalFormEl = document.getElementById(modalFormContact)
+    const modalFormEl = document.getElementById('modalFormContact')
+    modalFormEl.classList.add('display-block');
+    setValueForm('nameInput');
+    setValueForm('emailInput');
+    setValueForm('phoneInput');
+    setValueForm('messageInput');
+    handleBackgroundModal();
+}
+
+const crossCloseEls = document.getElementsByClassName('btn-close');
+for(let i = 0; i < crossCloseEls.length; i++)
+{
+    crossCloseEls[i].addEventListener('click', handleCloseModal)
+}
+function handleCloseModal() {
+    const parentEl = this.parentElement
+    parentEl.classList.remove('display-block')
+    document.body.classList.remove('open-modal')
+    document.getElementsByClassName('modal-container')[0].remove()
+}
+function handleBackgroundModal() {
+    let modalContainerEl = document.createElement("DIV");   // Create a <div> element
+    modalContainerEl.classList.add('modal-container') // add class 'modal-continer' in css to DIV el
+    document.body.appendChild(modalContainerEl); //append modalContainerEl as the last node in body
+    document.body.classList.add('open-modal') // add open-modal class to body
 }
 

@@ -303,8 +303,9 @@ footer .container .icon img {
 .modal-container {
     background-color: black;
     z-index: 1;
-    position: absolute;
+    position: fixed;
     left: 0;
+    top: 0;
     right: 0;
     height: 100vh;
     opacity: 0.5;
@@ -334,6 +335,9 @@ footer .container .icon img {
 .display-block {
     display: block;
 }
+.modal {
+    text-align: center;
+}
 .modal-portfolio .btn-cross {
     position: absolute;
     right: 20px;
@@ -359,7 +363,7 @@ footer .container .icon img {
 .modal-portfolio p {
     font-size: 20px;
 }
-.modal-portfolio .btn-close {
+.modal-portfolio .exit {
     border: 2px solid var(--color-white);
     width: auto;
     height: 60px;
@@ -463,9 +467,20 @@ footer .container .icon img {
     text-align: left;
 }
 .dropdown-no-boder-bottom {
-    border-bottom: 0;
+    border-bottom-color: transparent;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+}
+.dropdown .icon {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    transition: transform .3s ease;
+}
+.dropdown-no-boder-bottom .icon {
+    transform: translateY(-50%) rotate(180deg);
 }
 .dropdown .text {
     padding: 0.2rem;
@@ -501,6 +516,9 @@ footer .container .icon img {
     transform: translateX(-50%);
     z-index: 2;
     overflow-y: auto;
+}
+.modal-form.display-block {
+    display: block;
 }
 .modal-form .btn-cross {
     position: absolute;
