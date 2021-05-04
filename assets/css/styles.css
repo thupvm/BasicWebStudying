@@ -65,12 +65,17 @@ nav .container .nav-col {
     justify-content: space-between;
     align-items: center;
 }
-nav .container h2,
+nav .container .nav-col h2 {
+    cursor: pointer;
+}
 nav .container ul {
     text-transform: uppercase;
     font-weight: bold;
     margin-left: 20px;
     cursor: pointer;
+}
+nav .container ul li:hover {
+    color: var(--color-green-cyan);
 }
 nav .container ul {
     font-size: 16px;    
@@ -378,128 +383,17 @@ footer .container .icon img {
 }
 .back-to-top {
     position: fixed;
-    right: 20px;
+    right: 0;
     bottom: 20px;
     padding: 10px;
     opacity: 0.5;
-    background-color: cornflowerblue;
+    background-color: rgb(94, 94, 240);
+    transform: rotate(90deg);
 }
 .on-top {
     top: 0
 }
 
-/* collapse section */
-#accordion {
-    width: 80%;
-}
-#accordion .card {
-    margin: 20px auto;
-    width: 60%;
-}
-#accordion .card h2,
-#accordion .card .card-body {
-    padding: 2px;
-}
-#accordion .card h2 {
-    text-transform: capitalize;
-    cursor: pointer;
-}
-#accordion .card .collapse {
-    /* display: none; */
-    height: 0;
-    transition: height .5s;
-    overflow: hidden;
-}
-
-#accordion .card .collapse.show {
-    height: auto;
-}
-
-/* Tabs */
-#tabs.container {
-    margin: 0 auto;
-    width: 80%;
-}
-#tabs.container .tab-section {
-    margin: 0 auto;
-    width: 90%;
-}
-#tabs .tab-section .tab-nav .nav-item {
-    display: inline-block;
-    margin: 5px 20px;
-    opacity: 0.5;
-}
-#tabs .tab-section .tab-nav .nav-item.active {
-    opacity: 1;
-}
-#tabs .tab-section .tab-nav .nav-item button {
-    padding: 15px;
-    border-radius: 13px;
-    background-color: aquamarine;
-    border: 1px solit antiquewhite;
-    margin-top: 10px;
-}
-#tabs .tab-section .tab-nav .nav-item:active button {
-    background-color: pink;
-}
-
-#tabs .tab-section .tab-content .tab-pane {
-    display: block;
-    height: 0;
-    overflow: hidden;
-    text-align: left;
-    margin: 10px;
-}
-#tabs .tab-section .tab-content .show {
-    height: auto;
-}
-/* Dropdown Section */
-.dropdown-container {
-    text-align: center;
-}
-.dropdown {
-    position: relative;
-    border: 1px solid red;
-    border-radius: .28571429rem;
-    display: inline-block;
-    min-width: 100px;
-    margin: 0 auto;
-    text-align: left;
-}
-.dropdown-no-boder-bottom {
-    border-bottom-color: transparent;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-.dropdown .icon {
-    position: absolute;
-    right: 6px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 10px;
-    transition: transform .3s ease;
-}
-.dropdown-no-boder-bottom .icon {
-    transform: translateY(-50%) rotate(180deg);
-}
-.dropdown .text {
-    padding: 0.2rem;
-    cursor: pointer;
-}
-.dropdown .menu {
-    position: absolute;
-    left: 0;
-    right: 0;
-    border: 1px solid red;
-    border-top: 0;
-    border-radius: .28571429rem;
-    border-top: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    margin: 0 -1px;
-    padding: 0.2rem;
-    cursor: pointer;
-}
 /* Form Modal */
 .modal-form {
     display: none;

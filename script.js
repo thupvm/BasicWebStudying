@@ -89,145 +89,12 @@ function handleScrollBody() {
     }
 }
 
-// Handle Collapse
-// get current class is using height
-const firstCardHeaderEl = document.getElementsByClassName('card-header')[0]
-const firstCardContentEl = firstCardHeaderEl.nextElementSibling
-const firstCardBodyEl = firstCardContentEl.children[0]
-firstCardContentEl.style.height = `${firstCardBodyEl.clientHeight}px`
+// handleFormSubmit
+const btnSend = document.getElementsByClassName('btn-send')[0];
+btnSend.addEventListener('click', handleModalFormContact)
 
-const headerCollapseEl = document.getElementsByClassName('card-header')
-for(let i = 0; i < headerCollapseEl.length; i++ ) {
-    headerCollapseEl[i].addEventListener('click', handleCollapse)
-}
-
-function handleCollapse() {
-    //add class show for current .collapse
-    const cardContentEl = this.nextElementSibling
-    if (cardContentEl.clientHeight) {
-        cardContentEl.style.height = 0;
-    } else {
-        const cardBodyEl = cardContentEl.children[0]
-        cardContentEl.style.height = `${cardBodyEl.clientHeight}px`
-    }
-
-    const siblingsEl = getSiblings(this)
-    for (let i = 0; i < siblingsEl.length; i++) {
-        siblingsEl[i].style.height = 0;
-    }
-}
-
-function getSiblings(e) { //e = .card-header
-    let siblings = []
-    // if no parent, return no sibling
-    if(!e.parentElement && !e.parentElement.parentElement) {
-        return siblings;
-    }
-    // first child of the parent node
-    let sibling  = e.parentElement.parentElement.children[0]; //.card 
-
-    while(sibling) {
-        const cardHeaderEl = sibling.children[0]; //.card-header
-        if (cardHeaderEl !== e) {
-            const cardContent = sibling.children[1]; //.collapse la nextSibling cua .card-header
-            siblings.push(cardContent);
-        }
-        sibling = sibling.nextElementSibling;
-    }
-    return siblings
-}
-
-// Handle Tabs Section
-const navItemEl = document.getElementsByClassName('nav-item')
-for(let i = 0; i < navItemEl.length; i++ ) {
-    navItemEl[i].addEventListener('click', handleOpenTabs)
-}
-function getSiblingsOfTabs(e) { //e = .nav-item
-    let siblings = []
-    // if no parent, return no sibling
-    if(!e.parentElement) { //e = .tab-nav
-        return siblings;
-    }
-    // first child of the parent node
-    let sibling  = e.parentElement.children[0]; //.nav-item[0]
-
-    while(sibling) {
-        if (sibling !== e) {
-            siblings.push(sibling);
-        }
-        sibling = sibling.nextElementSibling;
-    }
-    return siblings
-}
-function handleOpenTabs() {
-    //siblings of nav-item
-    const siblingsNavItemEl = getSiblingsOfTabs(this)
-    for (let i = 0; i < siblingsNavItemEl.length; i++) {
-        siblingsNavItemEl[i].classList.remove('active')
-    }
-    
-    //add .active cho current .nav-item
-    this.classList.add('active')
-
-    //get attribute data-content-id array
-    const navItemEl = this.getAttribute('data-content-id')
-
-    //get tabPane getElementById() (1)
-    const activeTabPaneEl = document.getElementById(navItemEl) 
-
-    //add class show (1)
-    activeTabPaneEl.classList.add('show')
-
-    //remove show cho cac siblings cua activeTabPane
-    const siblingsTabPaneEl = getSiblingsOfTabs(activeTabPaneEl)
-    for(let i = 0; i < siblingsTabPaneEl.length; i++) {
-        siblingsTabPaneEl[i].classList.remove('show')
-    }
-}
-// handle btn menu on nav
-// const menuBtn = document.getElementById("btn-menu-id");
-// menuBtn.addEventListener('click', handleShowNavWrap)
-// function handleShowNavWrap() {
-//     const navWrap =  document.getElementsByClassName('nav-wrap')
-//     navWrap[0].classList.toggle('display-nav-block')
-// }
-
-const menuBtn = document.getElementById("btn-menu-id");
-menuBtn.addEventListener('click', handleShowNavWrap)
-function handleShowNavWrap() {
-    const navWrap =  document.getElementsByClassName('nav-wrap')[0]
-    if (navWrap.clientHeight) {
-        navWrap.style.height = 0;
-    } else {
-        const numberChildren = navWrap.children.length
-        const sumOfHeightNavChildren = navWrap.children[0].clientHeight*numberChildren
-        navWrap.style.height = `${sumOfHeightNavChildren}px`
-    }
-}
-
-// click vao .dropdown
-const dropdownEl = document.getElementsByClassName('dropdown')[0]
-const menuEl = dropdownEl.children[2]
-const menuItems = menuEl.children
-const textEl =dropdownEl.children[1]
-textEl.addEventListener('click', handleDropdown)
-// -> toggle .hidden cho .menu | toggle cho icon xoay xuong/len
-
-function handleDropdown() {
-    menuEl.classList.toggle('hidden')
-    dropdownEl.classList.toggle('dropdown-no-boder-bottom')
-}
-// click vao tung item: query all items -> get data-value, text cua current item -> gan vao .text
-//add .hidden vao .menu va remove class .transition cho icon
-for(let i = 0; i < menuItems.length; i++) {
-    menuItems[i].addEventListener('click', handleClickMenuItem)
-}
-function handleClickMenuItem(e) {
-    textEl.innerHTML = this.innerHTML
-    textEl.setAttribute('data-value', this.getAttribute('data-value'))
-    menuEl.classList.add('hidden')
-    dropdownEl.classList.remove('dropdown-no-boder-bottom')
-}
+function setValueForm (id) {
+    document.querySelectorAll(`[data-content=${id}]`)[0].innerHTML = document.getElementById(id).value
 
 // handleFormSubmit
 const btnSend = document.getElementsByClassName('btn-send')[0];
@@ -264,4 +131,4 @@ function handleBackgroundModal() {
     document.body.appendChild(modalContainerEl); //append modalContainerEl as the last node in body
     document.body.classList.add('open-modal') // add open-modal class to body
 }
-
+}
