@@ -1,8 +1,8 @@
 //JAVASCRIPT DOCUMENT
 // Tooltip
 const tooltipObjectEl = document.getElementsByClassName('tooltip')[0]
-tooltipObjectEl && tooltipObjectEl.addEventListener('click', handleShowTooltip)
-// tooltipObjectEl && tooltipObjectEl.addEventListener('mouseout', handleHideTooltip)
+tooltipObjectEl && tooltipObjectEl.addEventListener('mouseover', handleShowTooltip)
+tooltipObjectEl && tooltipObjectEl.addEventListener('mouseout', handleHideTooltip)
 
 const popupEl = document.createElement("div");
 popupEl.classList.add('popup')
