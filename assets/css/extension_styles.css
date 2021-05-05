@@ -32,6 +32,41 @@ main section {
     display: block;
 }
 
+/* Button with Tooltip */
+.tooltip-section .btn-hover {
+    position: fixed;
+    top: 200px;
+    left: 200px;
+    padding: 20px;
+    background-color: aqua;
+    border: 2px solid pink;
+}
+.popup {
+    position: fixed;
+    background-color: royalblue;
+    padding: 50px 20px;
+}
+.popup:before {
+    position: absolute;
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: royalblue;
+    transform: rotate(45deg);
+    z-index: 2;
+} 
+
+.top.left.popup:before {
+    bottom: -6px;
+    left: 13px;
+    margin-left: 0;
+}
+.top.popup:before {
+    background: royalblue;
+}
+   
+
+
 /* Dropdown Section */
 .dropdown {
     width: 80%;
@@ -56,7 +91,7 @@ main section {
     transform: translateY(-50%);
     right: 0.2rem;
     font-size: 12px;
-    transition: transform .5s ease;
+    transition: transform .3s;
 }
 .dropdown-no-boder-bottom {
     border-bottom-color: transparent;
@@ -91,25 +126,25 @@ main section {
     margin: 20px auto;
     /* width: 60%; */
 }
-#collapses .card .card-header h4 {
+#collapses .card .header h4 {
     display: inline-block;
     cursor: pointer;
     padding: 2px;
 }
-#collapses .card .card-body {
+#collapses .card .content {
     padding: 2px;
 }
 #collapses .card h2 {
     text-transform: capitalize;
     cursor: pointer;
 }
-#collapses .card .collapse {
+#collapses .card .body-content {
     /* display: none; */
     height: 0;
     transition: height .5s;
     overflow: hidden;
 }
-#collapses .card .collapse.show {
+#collapses .card .body-content.show {
     height: auto;
 }
 
