@@ -37,15 +37,15 @@ function handleShowTooltip() {
         popupEl.style.top = (topObj - popupEl.offsetHeight - 10) + 'px'
     }
     if (subStringContentArray[0] === 'bottom') {
-        popupEl.style.top = (topObj + this.offsetHeight) + 'px'
+        popupEl.style.top = (topObj + this.offsetHeight + 10) + 'px'
     }
     if (subStringContentArray[0] === 'right') {
         popupEl.style.top = (topObj + (this.offsetHeight - popupEl.offsetHeight)/2 ) + 'px'
-        popupEl.style.left = rightObj + 'px'
+        popupEl.style.left = rightObj + 10 + 'px'
     }   
     if (subStringContentArray[0] === 'left') {
         popupEl.style.top = (topObj + (this.offsetHeight - popupEl.offsetHeight)/2 ) + 'px'
-        popupEl.style.left = (leftObj - popupEl.offsetWidth) + 'px'
+        popupEl.style.left = (leftObj - popupEl.offsetWidth - 10) + 'px'
     }
 }
 function handleHideTooltip() {

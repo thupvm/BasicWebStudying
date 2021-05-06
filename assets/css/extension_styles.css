@@ -40,11 +40,14 @@ main section {
     padding: 20px;
     background-color: aqua;
     border: 2px solid pink;
+    border-radius: 13px;
 }
 .popup {
     position: fixed;
     background-color: royalblue;
-    padding: 50px 20px;
+    padding: 25px 10px;
+    border-radius: 13px;
+    color: white;
 }
 .popup:before {
     position: absolute;
@@ -56,14 +59,38 @@ main section {
     z-index: 2;
 } 
 
-.top.left.popup:before {
+/* css for arrow of Tooltip */
+.top.popup:before, .bottom.popup:before {
+    background: royalblue;
+}
+.top.popup:before {
     bottom: -6px;
+}
+.bottom.popup:before {
+    top: -6px;
+}
+.left.popup:before {
     left: 13px;
     margin-left: 0;
 }
-.top.popup:before {
-    background: royalblue;
+.right.popup:before {
+    bottom: -6px;
+    right: 13px;
 }
+.center.popup:before {
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+.left.center.popup:before {
+    left: 158px;
+    bottom: auto;
+}
+.right.center.popup:before {
+    bottom: auto;
+    left: 0;
+}
+
    
 
 
