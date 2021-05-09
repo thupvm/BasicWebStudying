@@ -1,25 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/extension_styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Other page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/extension_styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Other page</title>
 </head>
+
 <body>
-    <header>
-        <h1 style="text-align: center;">Extension</h1>
-    </header>
-    <main>
-        <!-- Tooltip section -->
-        <section class="tooltip-section">
-          <button class="btn-hover tooltip" data-position="top left" data-content="hover me tooltip" data-on="hover">
-              Hover me
-          </button>  
-        </section>
-        <!-- Dropdown section -->
-        <!-- <section class="dropdown">
+	<header>
+		<h1 style="text-align: center;">Extension</h1>
+	</header>
+	<main>
+		<!-- Slider section -->
+		<section class="slider-section">
+			<div class="slider-inner">
+				<div class="slider-item active">
+					<p class="image1">Image 1</p>
+				</div>
+				<div class="slider-item">
+					<p class="image2">Image 2</p>
+				</div>
+				<div class="slider-item">
+					<p class="image3">Image 3</p>
+				</div>
+				<div class="slider-item">
+					<p class="image4">Image 4</p>
+				</div>
+			</div>
+			<button class="btn-previous"><</button>
+			<button class="btn-next">></button>
+			<ul class="slider-indicators">
+				<li class="active" data-number="0"></li>
+				<li data-number="1"></li>
+				<li data-number="2"></li>
+				<li data-number="3"></li>
+			</ul>
+		</section>
+		<!-- Tooltip section -->
+		<section class="tooltip-section">
+			<button class="btn-hover tooltip" data-position="top left" data-content="hover me tooltip" data-on="hover">
+				top left
+			</button>
+			<button class="btn-hover tooltip" data-position="top center" data-content="hover me tooltip" data-on="hover">
+				top center
+			</button>
+			<button class="btn-hover tooltip" data-position="top right" data-content="hover me tooltip" data-on="hover">
+				Top right
+			</button>
+			<button class="btn-hover tooltip" data-position="bottom left" data-content="hover me tooltip" data-on="hover">
+				Bottom lefts
+			</button>
+			<button class="btn-hover tooltip" data-position="bottom center" data-content="hover me tooltip" data-on="hover">
+				bottom center
+			</button>
+			<button class="btn-hover tooltip" data-position="bottom right" data-content="hover me tooltip" data-on="hover">
+				bottom right
+			</button>
+			<button class="btn-hover tooltip" data-position="left center" data-content="hover me tooltip" data-on="hover">
+				Left center
+			</button>
+			<button class="btn-hover tooltip" data-position="right center" data-content="hover me tooltip" data-on="hover">
+				Right center
+			</button>
+		</section>
+		<!-- Dropdown section -->
+		<!-- <section class="dropdown">
             <h3>Dropdown Demo</h3>
             <div class="dropdown-wrap">
                 <i class="fa fa-chevron-down icon" aria-hidden="true"></i>
@@ -30,8 +78,8 @@
                 </div>
             </div>
         </section> -->
-        <!-- Collapse section -->
-        <!-- <section id="collapses">
+		<!-- Collapse section -->
+		<!-- <section id="collapses">
             <h3>Collapse Demo</h3>
            <div class="collapse">
             <div class="card">
@@ -121,8 +169,8 @@
             </div>   
            </div> 
         </section> -->
-        <!-- Tabs Section -->
-        <!-- <section id="tabs">
+		<!-- Tabs Section -->
+		<!-- <section id="tabs">
             <div class="tab-wrap">
                 <div class="title-wrap">
                     <div>
@@ -186,7 +234,8 @@
                 </div>
             </div>
         </section> -->
-    </main>
+	</main>
 </body>
-<script type = text/javascript src="./extension_script.js"></script>
+<script type=text/javascript src="./extension_script.js"></script>
+
 </html>

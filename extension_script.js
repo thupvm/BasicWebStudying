@@ -1,13 +1,42 @@
 //JAVASCRIPT DOCUMENT
-// Tooltip
-const tooltipObjectEl = document.getElementsByClassName('tooltip')[0]
-tooltipObjectEl && tooltipObjectEl.addEventListener('mouseover', handleShowTooltip)
-tooltipObjectEl && tooltipObjectEl.addEventListener('mouseout', handleHideTooltip)
 
-const popupEl = document.createElement("div");
-popupEl.classList.add('popup')
+
+// Slider
+const sliderIndicatorList = document.getElementsByClassName('slider-indicators')
+for (let i = 0; i < sliderIndicatorList.length; i++) {
+    for (let j = 0; j < sliderIndicatorList[i].children.length; j++ ) {
+        sliderIndicatorList[i].children[j].addEventListener('click', handleIndicator)
+    }
+}
+
+function handleIndicator() {
+    const sliderSectionEl = this.parentElement.parentElement
+    const sliderInnerEl = sliderSectionEl.children[0]
+    const dataNumberAttribute = this.getAttribute('data-number')
+
+    const sliderItemEl = sliderInnerEl.children
+
+    for (let i = 0; i < sliderItemEl.length; i++) {
+        if ( parseInt(dataNumberAttribute) === i) {
+            sliderItemEl[i].classList.add('active')
+        } else {
+            sliderItemEl[i].classList.remove('active')
+        }
+    }
+}
+
+
+
+// Tooltip
+const tooltipObjectEl = document.getElementsByClassName('tooltip')
+for (let i = 0; i < tooltipObjectEl.length; i++) {
+    tooltipObjectEl[i] && tooltipObjectEl[i].addEventListener('mouseover', handleShowTooltip)
+    tooltipObjectEl[i] && tooltipObjectEl[i].addEventListener('mouseout', handleHideTooltip)
+}
 
 function handleShowTooltip() {
+    const popupEl = document.createElement("div")
+    popupEl.classList.add('popup')
     const tooltipPosition = this.getAttribute('data-position')
     const tooltipContent = this.getAttribute('data-content')
     // cut string
@@ -23,6 +52,7 @@ function handleShowTooltip() {
     const rightObj = objectPostion.right
 
     document.body.appendChild(popupEl)
+
 
     if (subStringContentArray[1] === 'left') {
         popupEl.style.left = leftObj + 'px'
@@ -49,7 +79,8 @@ function handleShowTooltip() {
     }
 }
 function handleHideTooltip() {
-    popupEl.remove()
+    document.getElementsByClassName('popup')[0].remove()
+    // popupEl.remove()
 }
 
 

@@ -32,20 +32,72 @@ main section {
     display: block;
 }
 
+/* Slider */
+main .slider-section {
+    width: 400px;
+    height: 200px;
+    border: 2px solid red;
+    margin: 0 auto;
+    position: relative;
+}
+main .slider-section .slider-item {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .slider-section .slider-item.active {
+    opacity: 1;
+}
+main .slider-section .btn-previous,
+main .slider-section .btn-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background: red;
+    color: white;
+}
+main .slider-section .btn-previous {
+    left: 20px;
+}
+main .slider-section .btn-next {
+    right: 20px;
+}
+main .slider-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+main .slider-indicators li {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border: 2px solid red;
+    border-radius: 50%;
+}
+main .slider-indicators li.active {
+    background: yellow;
+}
+
 /* Button with Tooltip */
 .tooltip-section .btn-hover {
-    position: fixed;
-    top: 200px;
-    left: 200px;
     padding: 20px;
     background-color: aqua;
     border: 2px solid pink;
     border-radius: 13px;
+    margin: 50px;
 }
 .popup {
     position: fixed;
     background-color: royalblue;
-    padding: 25px 10px;
+    padding: 10px 30px;
     border-radius: 13px;
     color: white;
 }
@@ -60,7 +112,8 @@ main section {
 } 
 
 /* css for arrow of Tooltip */
-.top.popup:before, .bottom.popup:before {
+.top.popup:before, 
+.bottom.popup:before {
     background: royalblue;
 }
 .top.popup:before {
@@ -83,16 +136,14 @@ main section {
     transform: translateX(-50%) rotate(45deg);
 }
 .left.center.popup:before {
-    left: 158px;
+    left: auto;
+    right: -14px;
     bottom: auto;
 }
 .right.center.popup:before {
     bottom: auto;
-    left: 0;
+    left: 1px;
 }
-
-   
-
 
 /* Dropdown Section */
 .dropdown {
