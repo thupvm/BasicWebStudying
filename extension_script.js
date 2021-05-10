@@ -1,8 +1,26 @@
 //JAVASCRIPT DOCUMENT
 
-
 // Slider
-const sliderIndicatorList = document.getElementsByClassName('slider-indicators')
+const btnPrevious = document.getElementsByClassName('btn-previous')[0]
+const btnNext = document.getElementsByClassName('btn-next')[0]
+btnPrevious.addEventListener('click', handleClickPrevious)
+btnNext.addEventListener('click', handleClickNext)
+
+const sliderInnerItemEl = document.getElementsByClassName('slider-inner')[0].children
+
+function handleClickPrevious() {
+    
+}
+
+function handleClickNext() {
+    for (let i = 0; i < sliderInnerItemEl.length; i++) {
+        sliderInnerItemEl[i].classList.remove('active')
+        sliderInnerItemEl[i].nextSibling.classList.add('active')
+    }
+
+}
+
+const sliderIndicatorList = document.getElementsByClassName('slider-indicators') // .slider-indicators of ul
 for (let i = 0; i < sliderIndicatorList.length; i++) {
     for (let j = 0; j < sliderIndicatorList[i].children.length; j++ ) {
         sliderIndicatorList[i].children[j].addEventListener('click', handleIndicator)
@@ -15,17 +33,38 @@ function handleIndicator() {
     const dataNumberAttribute = this.getAttribute('data-number')
 
     const sliderItemEl = sliderInnerEl.children
+    const siblingsEl = getSiblingsOfSliderIndicatorChild(this)
 
     for (let i = 0; i < sliderItemEl.length; i++) {
-        if ( parseInt(dataNumberAttribute) === i) {
+        if (parseInt(dataNumberAttribute) === i) {
             sliderItemEl[i].classList.add('active')
+            this.classList.add('active')
         } else {
             sliderItemEl[i].classList.remove('active')
+            for (let i = 0; i < siblingsEl.length; i++) {
+                siblingsEl[i].classList.remove('active')
+            }
         }
     }
 }
 
+function getSiblingsOfSliderIndicatorChild(e) { //e = sliderIndicatorList[i].children[index]
+    let siblings = []
+    // if no parent, return no sibling
+    if(!e.parentElement) {
+        return siblings;
+    }
+    // first child of the parent node
+    let sibling  = e.parentElement.children[0]; //.sliderIndicatorList[index].children[0]
 
+    while(sibling) {
+        if (sibling !== e) {
+            siblings.push(sibling);
+        }
+        sibling = sibling.nextElementSibling;
+    }
+    return siblings
+}
 
 // Tooltip
 const tooltipObjectEl = document.getElementsByClassName('tooltip')

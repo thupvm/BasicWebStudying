@@ -81,6 +81,8 @@ main .slider-indicators li {
     width: 10px;
     border: 2px solid red;
     border-radius: 50%;
+    background-color: none;
+    cursor: pointer;
 }
 main .slider-indicators li.active {
     background: yellow;
