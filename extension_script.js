@@ -9,15 +9,25 @@ btnNext.addEventListener('click', handleClickNext)
 const sliderInnerItemEl = document.getElementsByClassName('slider-inner')[0].children
 
 function handleClickPrevious() {
-    
+    for (let i = sliderInnerItemEl.length-1; i > -1; i--) {
+        if (i == 0) break;
+        if (sliderInnerItemEl[i].className.includes('active')) {
+            sliderInnerItemEl[i].classList.remove('active')
+            sliderInnerItemEl[i-1].classList.add('active')
+            break;
+        }
+    }
 }
 
 function handleClickNext() {
     for (let i = 0; i < sliderInnerItemEl.length; i++) {
-        sliderInnerItemEl[i].classList.remove('active')
-        sliderInnerItemEl[i].nextSibling.classList.add('active')
+        if (i == sliderInnerItemEl.length-1) break;
+        if (sliderInnerItemEl[i].className.includes('active')) {
+            sliderInnerItemEl[i].classList.remove('active')
+            sliderInnerItemEl[i+1].classList.add('active')
+            break;
+        }
     }
-
 }
 
 const sliderIndicatorList = document.getElementsByClassName('slider-indicators') // .slider-indicators of ul
