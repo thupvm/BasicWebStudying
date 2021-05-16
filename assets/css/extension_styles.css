@@ -51,6 +51,10 @@ main .slider-section .slider-item {
     justify-content: center;
     align-items: center;
 }
+main .slider-section .slider-item img {
+    width: 300px;
+    height: 200px;
+}
 main .slider-section .slider-item.active {
     opacity: 1;
 }
