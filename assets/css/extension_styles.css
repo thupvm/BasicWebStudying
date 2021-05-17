@@ -90,6 +90,7 @@ main .slider-indicators li {
 }
 main .slider-indicators li.active {
     background: yellow;
+    transition: background 0.4s;
 }
 
 /* Button with Tooltip */

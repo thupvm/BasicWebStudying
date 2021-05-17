@@ -1,40 +1,9 @@
 //JAVASCRIPT DOCUMENT
 
 // Slider
-const btnPrevious = document.getElementsByClassName('btn-previous')[0]
-const btnNext = document.getElementsByClassName('btn-next')[0]
-btnPrevious.addEventListener('click', handleClickPrevious)
-btnNext.addEventListener('click', handleClickNext)
-
-const sliderInnerItemEl = document.getElementsByClassName('slider-inner')[0].children
-
-function handleClickPrevious() {
-    for (let i = sliderInnerItemEl.length-1; i > -1; i--) {
-        if (i == 0) break;
-        if (sliderInnerItemEl[i].className.includes('active')) {
-            sliderInnerItemEl[i].classList.remove('active')
-            sliderInnerItemEl[i-1].classList.add('active')
-            break;
-        }
-    }
-}
-
-function handleClickNext() {
-    for (let i = 0; i < sliderInnerItemEl.length; i++) {
-        if (i == sliderInnerItemEl.length-1) break;
-        if (sliderInnerItemEl[i].className.includes('active')) {
-            sliderInnerItemEl[i].classList.remove('active')
-            sliderInnerItemEl[i+1].classList.add('active')
-            break;
-        }
-    }
-}
-
-const sliderIndicatorList = document.getElementsByClassName('slider-indicators') // .slider-indicators of ul
-for (let i = 0; i < sliderIndicatorList.length; i++) {
-    for (let j = 0; j < sliderIndicatorList[i].children.length; j++ ) {
-        sliderIndicatorList[i].children[j].addEventListener('click', handleIndicator)
-    }
+const sliderIndicatorItems = document.getElementsByClassName('slider-indicators')[0].children // .slider-indicators of ul
+for (let i = 0; i < sliderIndicatorItems.length; i++ ) {
+    sliderIndicatorItems[i].addEventListener('click', handleIndicator)
 }
 
 function handleIndicator() {
@@ -54,6 +23,39 @@ function handleIndicator() {
             for (let i = 0; i < siblingsEl.length; i++) {
                 siblingsEl[i].classList.remove('active')
             }
+        }
+    }
+}
+
+const btnPrevious = document.getElementsByClassName('btn-previous')[0]
+const btnNext = document.getElementsByClassName('btn-next')[0]
+btnPrevious.addEventListener('click', handleClickPrevious)
+btnNext.addEventListener('click', handleClickNext)
+
+const sliderInnerItemEl = document.getElementsByClassName('slider-inner')[0].children
+
+function handleClickPrevious() {
+    for (let i = sliderInnerItemEl.length-1; i > -1; i--) {
+        if (i == 0) break;  
+        sliderIndicatorItems[i].classList.remove('active')
+        sliderIndicatorItems[i-1].classList.add('active')
+        if (sliderInnerItemEl[i].className.includes('active')) {
+            sliderInnerItemEl[i].classList.remove('active')
+            sliderInnerItemEl[i-1].classList.add('active')
+            break;
+        }
+    }
+}
+
+function handleClickNext() {
+    for (let i = 0; i < sliderInnerItemEl.length; i++) {
+        if (i == sliderInnerItemEl.length-1) break;
+        sliderIndicatorItems[i].classList.remove('active')
+        sliderIndicatorItems[i+1].classList.add('active')
+        if (sliderInnerItemEl[i].className.includes('active')) {
+            sliderInnerItemEl[i].classList.remove('active')
+            sliderInnerItemEl[i+1].classList.add('active')
+            break;
         }
     }
 }
