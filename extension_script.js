@@ -1,6 +1,6 @@
 //JAVASCRIPT DOCUMENT
 
-// Slider
+// Handle Slider
 const sliderIndicatorItems = document.getElementsByClassName('slider-indicators')[0].children // .slider-indicators of ul
 for (let i = 0; i < sliderIndicatorItems.length; i++ ) {
     sliderIndicatorItems[i].addEventListener('click', handleIndicator)

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Excercise
+    </h1>
+    <ul id='demo'>
+
+    </ul>
+    <input type='number' id='number-input'>
+    <button id='btn-ok' class="btnOk">OK</button>
+    
+</body>
+<script>
+       let array = [{name: 'A', age: 10}] 
+       const number = 5;
+       const arrayName = ['B', 'C', 'D', 'E', 'F']
+       const arrayAge = []
+       let age = array[0].age
+
+       for(let i = 0; i < number; i++) {
+            age = age+2;
+            array.push({name: arrayName[i], age: age})
+       }
+    //    const index = array.length/2
+    //    const ageIndex = array[index].age -1
+    //    array.splice(index, 0, {name: 'Between', age: ageIndex})
+       let arrayBegin = array.slice(0,array.length/2)
+       let arrayEnd = array.slice(array.length/2, array.length)
+
+       const index = array.length/2
+       const ageIndex = array[index].age -1
+       let newArray = arrayBegin.concat([{name: 'Between', age: ageIndex}], arrayEnd)
+
+       const btnOkEl = document.getElementsByClassName('btnOk')
+       btnOkEl[0].addEventListener('click', handleDeleteItem)
+
+       function handleDeleteItem() {
+           let numberInputEl = document.getElementById('number-input').value
+           if (newArray.length >= numberInputEl) {
+            console.log( 'new array', newArray[numberInputEl])
+            newArray.splice(numberInputEl, 1)
+            console.log(newArray)
+          }
+       }
+       
+       for (let i = 0; i < newArray.length ; i++) {
+        const liEl = document.createElement('li')
+        liEl.innerHTML = newArray[i].name + ', ' + newArray[i].age;
+        let ulEl = document.getElementById("demo")
+        ulEl.appendChild(liEl)
+        if (i%2 == 0) {
+            liEl.style.background = 'white'
+        } else {
+            liEl.style.background = 'red'
+        }
+       }
+</script>
+</html>
