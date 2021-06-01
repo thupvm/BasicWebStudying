@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+:root {
+    --color-violet: #9A2EFE;
+    --color-indigo: #7B68EE;
+    --color-white: #fff;
+    --color-pink: pink;
+}
+.section-todo {
+    background-color: var(--color-violet);
+    height: 800px;
+} 
+.section-todo h2 {
+    padding: 5px;
+    color: var(--color-pink);
+    text-align: center;
+}
+section .form-add, 
+section .form-item-list {
+    width: 60%;
+    margin: 1em auto;
+    background-color: var(--color-white);
+    border-radius: 5px;
+}
+section .form-add {
+    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+section .form-item-list {
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+}
+section .form-add input,
+section .form-add input:focus, 
+section .form-add button,
+section .form-item-list .group button {
+    border: 1px solid var(--color-violet);
+    border-radius: 5px;
+}
+section .form-add input,
+section .form-add input:focus {
+    width: 70%;
+    height: 3em;
+    padding-left: 10px;
+}
+section .form-add button {
+    width: 20%;
+    height: 3.3em;
+    padding: 2px;
+    color: var(--color-white);
+    background-color: var(--color-indigo);
+}
+section .form-item-list .group {
+    margin: 0.5em auto;
+    width: 95%;
+    border-bottom: 1px solid var(--color-violet);
+    list-style-type: none;
+    padding-left: 10px;
+}
+section .form-item-list .group button {
+   width: 3%;
+   float: right;
+   clear: both;
+   color: var(--color-white);
+   background-color: var(--color-indigo);
+   padding: 5px;
+   margin-bottom: 0.5em;
+}
