@@ -41,6 +41,10 @@ section .form-item-list .group button {
     border: 1px solid var(--color-violet);
     border-radius: 5px;
 }
+section .form-add input:focus {
+    outline-color: var(--color-indigo);
+}
+
 section .form-add input {
     width: 70%;
     height: 3em;
