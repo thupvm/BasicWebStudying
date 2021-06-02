@@ -1,3 +1,4 @@
+// Bai tap 1: section ToDoList 
 let toDoList = [] // default array for toDoList
 let ulEl = document.getElementsByClassName("form-item-list")[0]
 let toDoInput = document.getElementsByClassName("todo-input")[0] 

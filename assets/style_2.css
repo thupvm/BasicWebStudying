@@ -1,0 +1,15 @@
+.curren-time-section {
+    background-color: black;
+    text-align: center;
+}
+.curren-time-section .container {
+    padding: 2em 0;
+}
+.curren-time-section h2 {
+    color: whitesmoke;
+}
+.curren-time-section .current-time {
+    font-size: 50px;
+    color: aqua;
+    font-family:'Orbitron', sans-serif;
+}

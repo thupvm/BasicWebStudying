@@ -15,62 +15,62 @@ h1, h2, h3, h4, h5, h6 {
 }
 .section-todo {
     background-color: var(--color-violet);
-    height: 800px;
+    height: 330px;
 } 
 .section-todo h2 {
     padding: 5px;
     color: var(--color-pink);
     text-align: center;
 }
-section .form-add, 
-section .form-item-list {
+.section-todo  .form-add, 
+.section-todo  .form-item-list {
     width: 60%;
     margin: 1em auto;
     background-color: var(--color-white);
     border-radius: 5px;
 }
-section .form-add {
+.section-todo  .form-add {
     height: 5em;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
-section .form-add input,
-section .form-add button,
-section .form-item-list .group button {
+.section-todo  .form-add input,
+.section-todo  .form-add button,
+.section-todo  .form-item-list .group button {
     border: 1px solid var(--color-violet);
     border-radius: 5px;
 }
-section .form-add input:focus {
+.section-todo  .form-add input:focus {
     outline-color: var(--color-indigo);
 }
 
-section .form-add input {
+.section-todo  .form-add input {
     width: 70%;
     height: 3em;
     padding-left: 10px;
 }
-section .form-add button {
+.section-todo  .form-add button {
     width: 20%;
     height: 3.3em;
     padding: 2px;
     color: var(--color-white);
     background-color: var(--color-indigo);
 }
-section .form-item-list {
-    height: 30em;
+.section-todo  .form-item-list {
+    height: 10em;
     display: flex;
     flex-direction: column;
     overflow: auto;
 }
-section .form-item-list .group {
+.section-todo  .form-item-list .group {
     margin: 0.5em auto;
     width: 95%;
     border-bottom: 1px solid var(--color-violet);
     list-style-type: none;
     padding-left: 10px;
 }
-section .form-item-list .group button {
+.section-todo  .form-item-list .group button {
    width: 5%;
    float: right;
    clear: both;
@@ -83,30 +83,25 @@ section .form-item-list .group button {
 
 /* Reponsive */
 @media (max-width: 1367px) {
-    /* section .form-item-list .group button {
-        width: 6%;
-     } */
+
 }
 @media (max-width: 767px)  {
-    /* section .form-item-list .group button {
-        width: 10%;
-        margin-right: 5px;
-    } */
+
 }
 @media (max-width: 640px) {
-    section .form-add, 
-    section .form-item-list {
-        width: 80%;
+    .section-todo .form-add, 
+    .section-todo .form-item-list {
+        width: 90%;
     }
-    section .form-add input,
-    section .form-add button {
+    .section-todo .form-add input,
+    .section-todo .form-add button {
         margin-left: 0.5em;
         margin-right: 0.8em;
     }
-    section .form-item-list .group {
+    .section-todo .form-item-list .group {
         width: 90%;
     }
-    section .form-item-list .group button {
+    .section-todo .form-item-list .group button {
         width: 15%;
      }
 }
