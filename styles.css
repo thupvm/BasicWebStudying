@@ -35,20 +35,13 @@ section .form-add {
     align-items: center;
     justify-content: space-around;
 }
-section .form-item-list {
-    height: 30em;
-    display: flex;
-    flex-direction: column;
-}
 section .form-add input,
-section .form-add input:focus, 
 section .form-add button,
 section .form-item-list .group button {
     border: 1px solid var(--color-violet);
     border-radius: 5px;
 }
-section .form-add input,
-section .form-add input:focus {
+section .form-add input {
     width: 70%;
     height: 3em;
     padding-left: 10px;
@@ -59,6 +52,12 @@ section .form-add button {
     padding: 2px;
     color: var(--color-white);
     background-color: var(--color-indigo);
+}
+section .form-item-list {
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
 }
 section .form-item-list .group {
     margin: 0.5em auto;
@@ -96,7 +95,6 @@ section .form-item-list .group button {
         width: 80%;
     }
     section .form-add input,
-    section .form-add input:focus, 
     section .form-add button {
         margin-left: 0.5em;
         margin-right: 0.8em;
