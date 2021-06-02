@@ -68,11 +68,43 @@ section .form-item-list .group {
     padding-left: 10px;
 }
 section .form-item-list .group button {
-   width: 3%;
+   width: 5%;
    float: right;
    clear: both;
    color: var(--color-white);
    background-color: var(--color-indigo);
    padding: 5px;
    margin-bottom: 0.5em;
+   margin-right: 5px;
+}
+
+/* Reponsive */
+@media (max-width: 1367px) {
+    /* section .form-item-list .group button {
+        width: 6%;
+     } */
+}
+@media (max-width: 767px)  {
+    /* section .form-item-list .group button {
+        width: 10%;
+        margin-right: 5px;
+    } */
+}
+@media (max-width: 640px) {
+    section .form-add, 
+    section .form-item-list {
+        width: 80%;
+    }
+    section .form-add input,
+    section .form-add input:focus, 
+    section .form-add button {
+        margin-left: 0.5em;
+        margin-right: 0.8em;
+    }
+    section .form-item-list .group {
+        width: 90%;
+    }
+    section .form-item-list .group button {
+        width: 15%;
+     }
 }
