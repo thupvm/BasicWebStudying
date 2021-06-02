@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style_1.css">
     <link rel="stylesheet" href="assets/style_2.css">
+    <link rel="stylesheet" href="assets/style_3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <title>Homework</title>
@@ -12,9 +13,7 @@
 <body class="body"> 
     <!-- ToDoList -->
     <section class="section-todo" id="sectionToDo">
-        <h2>
-            Excercise 1
-        </h2>
+        <h2>Excercise 1</h2>
         <div class="form-add">
             <input type="text" class='todo-input' name="toDoName" placeholder="Task to be done" />
             <button class="btn-add" id="btnAdd">Add</button>
@@ -28,12 +27,33 @@
     </section>
     <section class="curren-time-section" id="sectionCurrentTime">
         <div class="container">
-            <h2>Excersie 2 <br/>Current Time </h2>
+            <!-- <h2>Excersie 2 <br/>Current Time </h2> -->
             <span class="current-time" id="currentTime"></span>
+        </div>
+    </section>
+    <section class="count-down-clock-section">
+        <h2>Countdown Clock</h2>
+        <div class='timer'>
+            <span id="day"></span>
+            <h4>Days</h4>
+        </div>
+        <div class='timer'>
+            <span id="hour"></span>
+            <h4>Hours</h4>
+        </div>
+        <div class='timer'>
+            <span id="minute"></span>
+            <h4>Minutes</h4>
+        </div>
+        <div class='timer'>
+            <span id="second"></span>
+            <h4>Seconds</h4>
         </div>
     </section>
     
 </body>
 <script type = text/javascript src="script/script_1.js"></script>
 <script type = text/javascript src="script/script_2.js"></script>
+<script type = text/javascript src="script/script_3.js"></script>
+
 </html>

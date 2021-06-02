@@ -3,10 +3,6 @@
     margin: 0;
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-h1, h2, h3, h4, h5, h6 {
-    text-transform: uppercase;
-    font-weight: bold;
-}
 :root {
     --color-violet: #9A2EFE;
     --color-indigo: #7B68EE;
