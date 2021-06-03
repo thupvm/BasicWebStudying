@@ -10,6 +10,7 @@
     position: absolute;
     top: 15%;
     color: #2b7e7e;
+    text-align: center;
 }
 .count-down-clock-section .timer {
     width: 90px;

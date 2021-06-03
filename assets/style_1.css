@@ -52,6 +52,7 @@
     padding: 2px;
     color: var(--color-white);
     background-color: var(--color-indigo);
+    cursor: pointer;
 }
 .section-todo  .form-item-list {
     height: 10em;
@@ -75,6 +76,7 @@
    padding: 5px;
    margin-bottom: 0.5em;
    margin-right: 5px;
+   cursor: pointer;
 }
 
 /* Reponsive */

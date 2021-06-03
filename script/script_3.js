@@ -16,6 +16,11 @@ var x = setInterval(function() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+  days = days < 10 ? '0'+days : days;
+  hours = hours < 10 ? '0'+hours : hours;
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  seconds = seconds < 10 ? '0'+seconds : seconds;
+
   // Display the result in the element with id="demo"
   document.getElementById("day").innerHTML = days;
   document.getElementById("hour").innerHTML = hours;
